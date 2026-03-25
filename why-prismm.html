@@ -47,8 +47,8 @@
 <main id="main">
 <section class="page-header"><div class="container"><span class="label">Why Prismm</span><h1>Not just storage. Not a tool.<br>Infrastructure.</h1><p>The distinction matters. Here's why Prismm exists in a category of its own and why no existing solution addresses what banks actually need.</p></div></section>
 
-<!-- RETENTION — carousel (A, B, C, D) -->
-<section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
+<!-- RETENTION — carousel (A, B, C, D, E, F, G) -->
+  <section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
 <div class="feature-row__visual" style="padding:0">
   <div class="carousel" id="car-ret">
     <div class="carousel__track">
@@ -348,15 +348,152 @@
         </svg>
       </div>
 
+      <!-- ============================================================ -->
+<!-- PASTE THESE 3 SLIDES inside car-ret carousel__track         -->
+<!-- Insert BEFORE the closing </div> of carousel__track         -->
+<!-- (i.e. right after Slide D's closing </div>)                 -->
+<!-- Also update car-ret-dots from 4 dots to 7 dots (see bottom) -->
+<!-- ============================================================ -->
+
+      <!-- Slide E: structured path split screen -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="148" y="22" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">WITHOUT PRISMM</text>
+          <rect x="98" y="36" width="100" height="42" rx="10" fill="rgba(250,199,117,.12)" stroke="rgba(186,117,23,.3)" stroke-width="1.5"/>
+          <text x="148" y="55" text-anchor="middle" fill="#92600A" font-family="sans-serif" font-size="12" font-weight="600">Deposit</text>
+          <text x="148" y="70" text-anchor="middle" fill="#92600A" font-family="sans-serif" font-size="10">life event</text>
+          <line x1="120" y1="36" x2="54" y2="108" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="16" y="108" width="76" height="32" rx="7" fill="rgba(156,163,175,.08)" stroke="rgba(156,163,175,.3)" stroke-width="1"/>
+          <text x="54" y="128" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="11">Attorney</text>
+          <line x1="198" y1="36" x2="224" y2="108" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="186" y="108" width="76" height="32" rx="7" fill="rgba(156,163,175,.08)" stroke="rgba(156,163,175,.3)" stroke-width="1"/>
+          <text x="224" y="128" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="11">Other Bank</text>
+          <line x1="148" y1="78" x2="98" y2="174" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="36" y="174" width="72" height="32" rx="7" fill="rgba(156,163,175,.08)" stroke="rgba(156,163,175,.3)" stroke-width="1"/>
+          <text x="72" y="194" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="11">Friction</text>
+          <line x1="198" y1="78" x2="224" y2="174" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <rect x="186" y="174" width="72" height="32" rx="7" fill="rgba(156,163,175,.08)" stroke="rgba(156,163,175,.3)" stroke-width="1"/>
+          <text x="222" y="194" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="11">Lost</text>
+          <rect x="36" y="228" width="224" height="30" rx="7" fill="rgba(239,68,68,.06)" stroke="rgba(239,68,68,.2)" stroke-width="1"/>
+          <text x="148" y="248" text-anchor="middle" fill="#B91C1C" font-family="sans-serif" font-size="11" font-weight="600">70% of deposits leave</text>
+          <line x1="300" y1="12" x2="300" y2="286" stroke="rgba(156,163,175,.25)" stroke-width="1" stroke-dasharray="5 4"/>
+          <text x="452" y="22" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">WITH PRISMM</text>
+          <rect x="402" y="36" width="100" height="42" rx="10" fill="rgba(250,199,117,.12)" stroke="rgba(186,117,23,.3)" stroke-width="1.5"/>
+          <text x="452" y="55" text-anchor="middle" fill="#92600A" font-family="sans-serif" font-size="12" font-weight="600">Deposit</text>
+          <text x="452" y="70" text-anchor="middle" fill="#92600A" font-family="sans-serif" font-size="10">life event</text>
+          <line x1="452" y1="78" x2="452" y2="118" stroke="#6658EA" stroke-width="2.5" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 60;60 0;60 0;0 60" keyTimes="0;0.5;0.85;1" dur="3s" repeatCount="indefinite"/></line>
+          <rect x="382" y="118" width="140" height="34" rx="10" fill="rgba(102,88,234,.08)" stroke="rgba(102,88,234,.4)" stroke-width="1.5"/>
+          <text x="452" y="140" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="12" font-weight="600">Prismm Pathway</text>
+          <line x1="452" y1="152" x2="452" y2="192" stroke="#6658EA" stroke-width="2.5" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 60;60 0;60 0;0 60" keyTimes="0;0.5;0.85;1" dur="3s" begin="0.3s" repeatCount="indefinite"/></line>
+          <rect x="372" y="192" width="160" height="42" rx="10" fill="rgba(15,110,86,.08)" stroke="rgba(15,110,86,.35)" stroke-width="1.5"/>
+          <text x="452" y="210" text-anchor="middle" fill="#065F46" font-family="sans-serif" font-size="13" font-weight="700">Your Institution</text>
+          <text x="452" y="226" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="10">assets retained &#x2713;</text>
+          <rect x="368" y="252" width="168" height="30" rx="7" fill="rgba(15,110,86,.06)" stroke="rgba(15,110,86,.2)" stroke-width="1"/>
+          <text x="452" y="272" text-anchor="middle" fill="#065F46" font-family="sans-serif" font-size="11" font-weight="600">structured &#xB7; compliant &#xB7; retained</text>
+        </svg>
+      </div>
+
+      <!-- Slide F: estate readiness timeline -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 580 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="290" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="0.06em">ESTATE READINESS LIFECYCLE</text>
+          <line x1="60" y1="150" x2="520" y2="150" stroke="rgba(156,163,175,.25)" stroke-width="1.5"/>
+          <circle cx="100" cy="150" r="20" fill="rgba(102,88,234,.10)" stroke="#6658EA" stroke-width="2"><animate attributeName="fill-opacity" values="0.10;0.22;0.10" dur="3s" repeatCount="indefinite"/></circle>
+          <text x="100" y="155" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="13" font-weight="700">1</text>
+          <text x="100" y="186" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11" font-weight="600">Account</text>
+          <text x="100" y="200" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11">Opening</text>
+          <text x="100" y="116" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="9">Customer joins</text>
+          <line x1="120" y1="150" x2="218" y2="150" stroke="rgba(102,88,234,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <circle cx="238" cy="150" r="20" fill="rgba(102,88,234,.10)" stroke="#6658EA" stroke-width="2"><animate attributeName="fill-opacity" values="0.10;0.22;0.10" dur="3s" begin="0.4s" repeatCount="indefinite"/></circle>
+          <text x="238" y="155" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="13" font-weight="700">2</text>
+          <text x="238" y="186" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11" font-weight="600">Prismm</text>
+          <text x="238" y="200" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11">Captures Data</text>
+          <rect x="224" y="100" width="28" height="22" rx="4" fill="rgba(102,88,234,.12)" stroke="rgba(102,88,234,.4)" stroke-width="1.5"/>
+          <text x="238" y="96" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9" font-weight="600">locked in</text>
+          <line x1="258" y1="150" x2="358" y2="150" stroke="rgba(102,88,234,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <circle cx="378" cy="150" r="20" fill="rgba(249,101,91,.10)" stroke="#F9655B" stroke-width="2"><animate attributeName="fill-opacity" values="0.10;0.25;0.10" dur="2s" repeatCount="indefinite"/></circle>
+          <text x="378" y="155" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="13" font-weight="700">!</text>
+          <text x="378" y="186" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11" font-weight="600">Life Event</text>
+          <text x="378" y="200" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11">Triggers</text>
+          <text x="378" y="116" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="9">death / transition</text>
+          <path d="M398 150 C430 150 460 80 520 60" stroke="rgba(239,68,68,.35)" stroke-width="1.5" stroke-dasharray="5 4" fill="none"><animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="2.5s" repeatCount="indefinite"/></path>
+          <text x="500" y="52" fill="#EF4444" font-family="sans-serif" font-size="9" text-anchor="middle">scattered</text>
+          <path d="M398 150 Q440 190 480 195" stroke="#059669" stroke-width="2.5" stroke-linecap="round" fill="none"><animate attributeName="stroke-dasharray" values="0 120;120 0;120 0;0 120" keyTimes="0;0.45;0.85;1" dur="3s" repeatCount="indefinite"/></path>
+          <rect x="422" y="210" width="118" height="38" rx="10" fill="rgba(5,150,105,.08)" stroke="rgba(5,150,105,.4)" stroke-width="1.5"><animate attributeName="fill-opacity" values="0.08;0.18;0.08" dur="3s" begin="0.5s" repeatCount="indefinite"/></rect>
+          <text x="481" y="228" text-anchor="middle" fill="#065F46" font-family="sans-serif" font-size="12" font-weight="700">Retained</text>
+          <text x="481" y="243" text-anchor="middle" fill="#059669" font-family="sans-serif" font-size="10">at your institution</text>
+          <text x="290" y="278" text-anchor="middle" fill="rgba(107,114,128,.7)" font-family="sans-serif" font-size="10">Prismm locks in the pathway at origination &#x2014; so the exit route is already closed when it matters.</text>
+        </svg>
+      </div>
+
+      <!-- Slide G: leaking bucket -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="148" y="22" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">WITHOUT PRISMM</text>
+          <text x="412" y="22" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">WITH PRISMM</text>
+          <path d="M98 56 L58 220 L238 220 L198 56 Z" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.2)" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="148" cy="56" rx="50" ry="10" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.2)" stroke-width="2"/>
+          <text x="148" y="108" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="13" font-weight="700">Bank</text>
+          <circle cx="100" cy="148" r="5" fill="rgba(255,255,255,.9)" stroke="rgba(239,68,68,.5)" stroke-width="1.5"/>
+          <circle cx="88" cy="188" r="4" fill="rgba(255,255,255,.9)" stroke="rgba(239,68,68,.5)" stroke-width="1.5"/>
+          <circle cx="196" cy="158" r="4" fill="rgba(255,255,255,.9)" stroke="rgba(239,68,68,.5)" stroke-width="1.5"/>
+          <circle cx="100" cy="153" r="5" fill="#FAC775" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="1.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,60" dur="1.8s" repeatCount="indefinite"/></circle>
+          <circle cx="88" cy="192" r="4" fill="#FAC775" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.1s" begin="0.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,52" dur="2.1s" begin="0.6s" repeatCount="indefinite"/></circle>
+          <circle cx="196" cy="162" r="4" fill="#FAC775" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="1.6s" begin="0.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,56" dur="1.6s" begin="0.3s" repeatCount="indefinite"/></circle>
+          <text x="148" y="252" text-anchor="middle" fill="#EF4444" font-family="sans-serif" font-size="11" font-weight="600">deposits leaking out</text>
+          <line x1="280" y1="12" x2="280" y2="280" stroke="rgba(156,163,175,.2)" stroke-width="1" stroke-dasharray="5 4"/>
+          <path d="M362 56 L322 220 L502 220 L462 56 Z" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.3)" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="412" cy="56" rx="50" ry="10" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.3)" stroke-width="2"/>
+          <text x="412" y="108" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="13" font-weight="700">Bank</text>
+          <circle cx="364" cy="148" r="8" fill="rgba(102,88,234,.18)" stroke="#6658EA" stroke-width="1.5"><animate attributeName="fill-opacity" values="0.18;0.32;0.18" dur="2s" repeatCount="indefinite"/></circle>
+          <text x="364" y="152" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8" font-weight="700">&#x2713;</text>
+          <circle cx="352" cy="188" r="7" fill="rgba(102,88,234,.18)" stroke="#6658EA" stroke-width="1.5"><animate attributeName="fill-opacity" values="0.18;0.32;0.18" dur="2s" begin="0.4s" repeatCount="indefinite"/></circle>
+          <text x="352" y="192" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8" font-weight="700">&#x2713;</text>
+          <circle cx="460" cy="158" r="7" fill="rgba(102,88,234,.18)" stroke="#6658EA" stroke-width="1.5"><animate attributeName="fill-opacity" values="0.18;0.32;0.18" dur="2s" begin="0.8s" repeatCount="indefinite"/></circle>
+          <text x="460" y="162" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8" font-weight="700">&#x2713;</text>
+          <circle cx="390" cy="178" r="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0.7"/>
+          <circle cx="412" cy="186" r="5" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="432" cy="174" r="7" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0.8"/>
+          <rect x="350" y="230" width="124" height="28" rx="7" fill="rgba(102,88,234,.08)" stroke="rgba(102,88,234,.25)" stroke-width="1"/>
+          <text x="412" y="248" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="11" font-weight="600">Prismm sealed &#x2713;</text>
+        </svg>
+      </div>
+
+<!-- ============================================================ -->
+<!-- ALSO UPDATE the car-ret-dots section from 4 dots to 7:      -->
+<!--                                                              -->
+<!-- FIND (in car-ret controls):                                  -->
+<!--   <div class="carousel__dots" id="car-ret-dots">            -->
+<!--     <div class="carousel__dot active" ...0)></div>          -->
+<!--     <div class="carousel__dot" ...1)></div>                  -->
+<!--     <div class="carousel__dot" ...2)></div>                  -->
+<!--     <div class="carousel__dot" ...3)></div>                  -->
+<!--   </div>                                                     -->
+<!--                                                              -->
+<!-- REPLACE WITH:                                                -->
+<!--   <div class="carousel__dots" id="car-ret-dots">            -->
+<!--     <div class="carousel__dot active" onclick="carGo('ret',0)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',1)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',2)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',3)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',4)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',5)"></div> -->
+<!--     <div class="carousel__dot" onclick="carGo('ret',6)"></div> -->
+<!--   </div>                                                     -->
+<!-- ============================================================ -->
+
     </div>
     <div class="carousel__controls">
       <button class="carousel__btn" onclick="carMove('ret',-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="carousel__dots" id="car-ret-dots">
-        <div class="carousel__dot active" onclick="carGo('ret',0)"></div>
-        <div class="carousel__dot" onclick="carGo('ret',1)"></div>
-        <div class="carousel__dot" onclick="carGo('ret',2)"></div>
-        <div class="carousel__dot" onclick="carGo('ret',3)"></div>
-      </div>
+  <div class="carousel__dot active" onclick="carGo('ret',0)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',1)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',2)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',3)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',4)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',5)"></div>
+  <div class="carousel__dot" onclick="carGo('ret',6)"></div>
+</div>
       <button class="carousel__btn" onclick="carMove('ret',1)" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
   </div>
