@@ -1,118 +1,20 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Why Prismm — Not Just Storage. Infrastructure.</title><meta name="description" content="Prismm is not just storage, not estate planning software, and not a bolt-on. It is the infrastructure layer banks need. Deposit retention, account transition automation, and intergenerational growth."><meta name="robots" content="index, follow"><link rel="canonical" href="https://getprismm.com/why-prismm"><link rel="stylesheet" href="css/style.css?v=6"><link rel="icon" href="images/logo-light.svg" type="image/svg+xml">
 <style>
-.carousel{position:relative;width:100%}
-.carousel__track{position:relative;width:100%;overflow:hidden}
-.carousel__slide{display:none;width:100%}
-.carousel__slide.active{display:block}
-.carousel__slide svg{width:100%;height:auto;display:block}
-.carousel__controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
-.carousel__btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(102,88,234,.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
-.carousel__btn:hover{background:rgba(102,88,234,.06);border-color:rgba(102,88,234,.4)}
-.carousel__btn svg{width:14px;height:14px;stroke:#6658EA;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.carousel__dots{display:flex;gap:6px;align-items:center}
-.carousel__dot{width:6px;height:6px;border-radius:50%;background:rgba(102,88,234,.2);transition:background .2s,transform .2s;cursor:pointer}
-.carousel__dot.active{background:#6658EA;transform:scale(1.25)}
 @keyframes stepIn{0%,100%{opacity:0;transform:translateY(6px)}15%,80%{opacity:1;transform:translateY(0)}}
 @keyframes lineGrow{0%,100%{stroke-dashoffset:60}20%,80%{stroke-dashoffset:0}}
 @keyframes checkPop{0%,100%{transform:scale(0);opacity:0}25%,75%{transform:scale(1);opacity:1}}
-@keyframes paperShake{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
-@keyframes igpulse{0%,100%{r:22}50%{r:26}}
-@keyframes iglineIn{0%,100%{stroke-dashoffset:160;opacity:0}30%,70%{stroke-dashoffset:0;opacity:1}}
-@keyframes ignodePop{0%,20%,100%{transform:scale(0);opacity:0}40%,75%{transform:scale(1);opacity:1}}
-@keyframes igeventFlash{0%,100%{opacity:0}45%,55%{opacity:1}}
-@keyframes iglabelFade{0%,35%,100%{opacity:0}55%,80%{opacity:1}}
-@media(prefers-reduced-motion:no-preference){
-.st1{animation:stepIn 4s ease-in-out infinite}
-.st2{animation:stepIn 4s ease-in-out infinite .4s}
-.st3{animation:stepIn 4s ease-in-out infinite .8s}
-.st4{animation:stepIn 4s ease-in-out infinite 1.2s}
-.ln1{animation:lineGrow 4s ease-in-out infinite .25s}
-.ln2{animation:lineGrow 4s ease-in-out infinite .65s}
-.ln3{animation:lineGrow 4s ease-in-out infinite 1.05s}
-.ck1{animation:checkPop 4s ease-in-out infinite 1.6s}
-.paper{animation:paperShake 1.2s ease-in-out infinite}
-.igpls{animation:igpulse 2.5s ease-in-out infinite}
-.igl1{animation:iglineIn 4s ease-in-out infinite .2s}
-.igl2{animation:iglineIn 4s ease-in-out infinite .5s}
-.igl3{animation:iglineIn 4s ease-in-out infinite .8s}
-.ign1{animation:ignodePop 4s ease-in-out infinite .3s}
-.ign2{animation:ignodePop 4s ease-in-out infinite .6s}
-.ign3{animation:ignodePop 4s ease-in-out infinite .9s}
-.igev{animation:igeventFlash 4s ease-in-out infinite}
-.iglbl{animation:iglabelFade 4s ease-in-out infinite}
-}
 </style>
 </head><body>
 <a href="#main" class="skip-link">Skip to main content</a><div class="accent-bar" role="presentation"></div><nav class="nav" role="navigation" aria-label="Main navigation"><div class="nav__inner"><a href="/" class="nav__logo" aria-label="Prismm homepage"><img src="images/logo-light.svg" alt="Prismm" width="200" height="75"></a><ul class="nav__links" role="menubar"><li role="none"><a href="platform.html" role="menuitem">Platform</a></li><li role="none"><a href="why-prismm.html" role="menuitem">Why Prismm</a></li><li role="none"><a href="partners.html" role="menuitem">Partners</a></li><li role="none"><a href="resources.html" role="menuitem">Resources</a></li><li role="none"><a href="about.html" role="menuitem">About</a></li></ul><div class="nav__right"><a href="https://app.getprismm.com/session/new" class="nav__login">Log In</a><a href="contact.html" class="nav__cta">Schedule Briefing</a></div><button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div></nav>
 <main id="main">
 <section class="page-header"><div class="container"><span class="label">Why Prismm</span><h1>Not just storage. Not a tool.<br>Infrastructure.</h1><p>The distinction matters. Here's why Prismm exists in a category of its own and why no existing solution addresses what banks actually need.</p></div></section>
 
-<!-- RETENTION — carousel -->
+<!-- RETENTION — video -->
 <section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
 <div class="feature-row__visual" style="padding:0">
-  <div class="carousel" id="car-ret">
-    <div class="carousel__track">
-      <div class="carousel__slide active">
-        <svg width="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="150" r="110" fill="rgba(249,101,91,.04)" stroke="rgba(249,101,91,.12)" stroke-width="2"/>
-          <circle cx="200" cy="150" r="70" fill="rgba(249,101,91,.08)" stroke="rgba(249,101,91,.2)" stroke-width="2"/>
-          <text x="200" y="144" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="44" font-weight="700">70%</text>
-          <text x="200" y="176" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">Deposits retained with Prismm</text>
-        </svg>
-      </div>
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-          <text x="150" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">Without Prismm</text>
-          <rect x="75" y="38" width="150" height="52" rx="10" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/>
-          <text x="150" y="70" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
-          <text x="150" y="108" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12">life event occurs</text>
-          <circle cx="150" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;-85,-62;-85,-62;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/></circle>
-          <circle cx="138" cy="152" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;-40,-88;-40,-88;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/></circle>
-          <circle cx="162" cy="145" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;38,-78;38,-78;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/></circle>
-          <text x="50" y="84" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Other bank</text>
-          <text x="88" y="52" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Attorney</text>
-          <text x="195" y="60" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Friction</text>
-          <line x1="300" y1="10" x2="300" y2="295" stroke="rgba(156,163,175,.3)" stroke-width="1" stroke-dasharray="5 4"/>
-          <text x="450" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">With Prismm</text>
-          <rect x="375" y="38" width="150" height="52" rx="10" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/>
-          <text x="450" y="70" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
-          <rect x="352" y="104" width="196" height="30" rx="8" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.2)" stroke-width="0.5"/>
-          <text x="450" y="124" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="12">Prismm Anchor</text>
-          <rect x="390" y="224" width="120" height="60" rx="12" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.25)" stroke-width="0.5"/>
-          <text x="450" y="258" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="14" font-weight="600">Vault · retained</text>
-          <circle cx="450" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,0;0,68;0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/></circle>
-          <rect x="334" y="272" width="232" height="32" rx="8" fill="rgba(15,110,86,.05)" stroke="rgba(15,110,86,.15)" stroke-width="0.5"/>
-          <text x="450" y="292" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">70% retention · structured · compliant</text>
-        </svg>
-      </div>
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="560" height="300" rx="16" fill="#0F1117"/>
-          <circle cx="280" cy="150" r="48" fill="rgba(102,88,234,.12)"><animate attributeName="r" values="44;52;44" dur="3s" repeatCount="indefinite"/></circle>
-          <circle cx="280" cy="150" r="28" fill="rgba(102,88,234,.25)"><animate attributeName="r" values="24;30;24" dur="3s" repeatCount="indefinite"/></circle>
-          <text x="280" y="146" text-anchor="middle" fill="#A99FF5" font-family="sans-serif" font-size="11" font-weight="700">VAULT</text>
-          <text x="280" y="161" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9">Prismm</text>
-          <circle cx="60" cy="55" r="5" fill="#FAC775" opacity="0.9"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;198,83;198,83;0,0" keyTimes="0;0.1;0.65;0.85;1" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.7;0.85;1" dur="4s" repeatCount="indefinite"/></circle>
-          <circle cx="200" cy="30" r="4" fill="#FAC775" opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;75,112;75,112;0,0" keyTimes="0;0.15;0.68;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0;0;0.8" keyTimes="0;0.15;0.7;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/></circle>
-          <circle cx="430" cy="42" r="6" fill="#FAC775" opacity="0.85"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-162,100;-162,100;0,0" keyTimes="0;0.12;0.66;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.12;0.7;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/></circle>
-          <circle cx="510" cy="150" r="5" fill="#FAC775" opacity="0.75"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-240,0;-240,0;0,0" keyTimes="0;0.08;0.62;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.75;0.75;0;0;0.75" keyTimes="0;0.08;0.65;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
-          <circle cx="280" cy="268" r="5" fill="#FAC775" opacity="0.9"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;0,-126;0,-126;0,0" keyTimes="0;0.1;0.63;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.66;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/></circle>
-          <circle cx="38" cy="148" r="6" fill="#FAC775" opacity="0.85"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;230,0;230,0;0,0" keyTimes="0;0.1;0.62;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.1;0.65;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/></circle>
-          <text x="280" y="270" text-anchor="middle" fill="rgba(163,163,163,.6)" font-family="sans-serif" font-size="11">Every deposit. Anchored.</text>
-        </svg>
-      </div>
-    </div>
-    <div class="carousel__controls">
-      <button class="carousel__btn" onclick="carMove('ret',-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <div class="carousel__dots" id="car-ret-dots">
-        <div class="carousel__dot active" onclick="carGo('ret',0)"></div>
-        <div class="carousel__dot" onclick="carGo('ret',1)"></div>
-        <div class="carousel__dot" onclick="carGo('ret',2)"></div>
-      </div>
-      <button class="carousel__btn" onclick="carMove('ret',1)" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-    </div>
-  </div>
+  <video autoplay loop muted playsinline style="width:100%;max-width:560px;border-radius:12px;display:block;">
+    <source src="https://res.cloudinary.com/dialhpycd/video/upload/v1774465433/Prismm_New_Site_Images_4_zycku4.mp4" type="video/mp4">
+  </video>
 </div>
 </div></div></section>
 
@@ -144,8 +46,6 @@
 </main>
 <footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
 <script>
-function carMove(id,dir){const t=document.getElementById('car-'+id);const slides=t.querySelectorAll('.carousel__slide');let cur=0;slides.forEach((s,i)=>{if(s.classList.contains('active'))cur=i});slides[cur].classList.remove('active');cur=(cur+dir+slides.length)%slides.length;slides[cur].classList.add('active');const dots=document.getElementById('car-'+id+'-dots');if(dots){dots.querySelectorAll('.carousel__dot').forEach((d,i)=>d.classList.toggle('active',i===cur))}}
-function carGo(id,idx){const t=document.getElementById('car-'+id);const slides=t.querySelectorAll('.carousel__slide');slides.forEach(s=>s.classList.remove('active'));slides[idx].classList.add('active');const dots=document.getElementById('car-'+id+'-dots');if(dots){dots.querySelectorAll('.carousel__dot').forEach((d,i)=>d.classList.toggle('active',i===idx))}}
 document.querySelectorAll('.reveal').forEach(el=>{const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.15});obs.observe(el)});
 </script>
 </body></html>
