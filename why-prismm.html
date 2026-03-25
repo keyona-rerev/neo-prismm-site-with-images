@@ -12,13 +12,6 @@
 .carousel__dots{display:flex;gap:6px;align-items:center}
 .carousel__dot{width:6px;height:6px;border-radius:50%;background:rgba(102,88,234,.2);transition:background .2s,transform .2s;cursor:pointer}
 .carousel__dot.active{background:#6658EA;transform:scale(1.25)}
-.ab-wrap{position:relative}
-.ab-toggle{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.ab-toggle button{font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 14px;border-radius:20px;border:1.5px solid rgba(102,88,234,.25);background:transparent;color:#6658EA;cursor:pointer;transition:background .15s,color .15s}
-.ab-toggle button.active{background:#6658EA;color:#fff;border-color:#6658EA}
-.ab-toggle span{font-size:11px;color:#9CA3AF}
-.ab-option{display:none}
-.ab-option.active{display:block}
 @keyframes stepIn{0%,100%{opacity:0;transform:translateY(6px)}15%,80%{opacity:1;transform:translateY(0)}}
 @keyframes lineGrow{0%,100%{stroke-dashoffset:60}20%,80%{stroke-dashoffset:0}}
 @keyframes checkPop{0%,100%{transform:scale(0);opacity:0}25%,75%{transform:scale(1);opacity:1}}
@@ -217,12 +210,20 @@
 </div>
 </div></div></section>
 
-<!-- TRANSITION — unchanged -->
+<!-- TRANSITION — carousel -->
 <section class="section section--light" id="transition" aria-labelledby="trans-heading"><div class="container"><div class="feature-row feature-row--reverse reveal"><div><span class="label">Solution 02</span><h2 id="trans-heading">Account transition automation</h2><p class="text-lg">The average manual account transition takes 6 to 18 months of phone calls, paper forms, legal review, and compliance checks. Prismm replaces this with structured digital workflows.</p><p>From life event verification through final account transition, Prismm Anchor automates each step with compliance-ready audit trails. Your operations team handles in weeks what currently takes months.</p></div>
-<div class="feature-row__visual ab-wrap">
-<div class="ab-toggle"><button class="active" onclick="abSwitch('tr',0,this)">A</button><button onclick="abSwitch('tr',1,this)">B</button><span>toggle options</span></div>
-<div class="ab-option active" id="tr-0"><svg width="220" height="130" viewBox="0 0 220 130" fill="none"><rect x="10" y="16" width="84" height="32" rx="6" fill="rgba(249,101,91,.06)" stroke="rgba(249,101,91,.2)" stroke-width="1"/><text x="52" y="37" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="11" font-weight="600">6–18 months</text><text x="52" y="64" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Manual process</text><text x="110" y="37" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">→</text><rect x="126" y="16" width="84" height="32" rx="6" fill="rgba(102,88,234,.05)" stroke="rgba(102,88,234,.2)" stroke-width="1"/><text x="168" y="37" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="11" font-weight="700">Weeks</text><text x="168" y="64" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9">With Prismm</text><rect x="24" y="80" width="172" height="36" rx="7" fill="rgba(102,88,234,.03)" stroke="rgba(102,88,234,.1)" stroke-width="1"/><text x="110" y="96" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10">Verify → Notify → Delegate → Transition</text><text x="110" y="110" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Automated, compliant, auditable</text></svg></div>
-<div class="ab-option" id="tr-1"><svg width="100%" viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<div class="feature-row__visual" style="padding:0">
+  <div class="carousel" id="car-trans">
+    <div class="carousel__track">
+
+      <!-- Slide A: static 6-18 months → Weeks -->
+      <div class="carousel__slide active">
+        <svg width="220" height="130" viewBox="0 0 220 130" fill="none"><rect x="10" y="16" width="84" height="32" rx="6" fill="rgba(249,101,91,.06)" stroke="rgba(249,101,91,.2)" stroke-width="1"/><text x="52" y="37" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="11" font-weight="600">6–18 months</text><text x="52" y="64" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Manual process</text><text x="110" y="37" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">→</text><rect x="126" y="16" width="84" height="32" rx="6" fill="rgba(102,88,234,.05)" stroke="rgba(102,88,234,.2)" stroke-width="1"/><text x="168" y="37" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="11" font-weight="700">Weeks</text><text x="168" y="64" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9">With Prismm</text><rect x="24" y="80" width="172" height="36" rx="7" fill="rgba(102,88,234,.03)" stroke="rgba(102,88,234,.1)" stroke-width="1"/><text x="110" y="96" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10">Verify → Notify → Delegate → Transition</text><text x="110" y="110" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Automated, compliant, auditable</text></svg>
+      </div>
+
+      <!-- Slide B: animated pipeline -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <g class="paper" style="transform-origin:60px 80px"><rect x="28" y="40" width="54" height="68" rx="4" fill="rgba(31,41,55,.03)" stroke="rgba(31,41,55,.12)" stroke-width="1" transform="rotate(-7,55,74)"/><rect x="32" y="36" width="54" height="68" rx="4" fill="rgba(31,41,55,.03)" stroke="rgba(31,41,55,.12)" stroke-width="1" transform="rotate(-2,59,70)"/><rect x="36" y="32" width="54" height="68" rx="4" fill="rgba(31,41,55,.05)" stroke="rgba(31,41,55,.18)" stroke-width="1"/><line x1="46" y1="48" x2="80" y2="48" stroke="rgba(31,41,55,.18)" stroke-width="1"/><line x1="46" y1="58" x2="80" y2="58" stroke="rgba(31,41,55,.13)" stroke-width="1"/><line x1="46" y1="68" x2="70" y2="68" stroke="rgba(31,41,55,.13)" stroke-width="1"/></g>
 <rect x="22" y="118" width="80" height="22" rx="5" fill="rgba(163,45,45,.06)" stroke="rgba(163,45,45,.15)" stroke-width="0.5"/><text x="62" y="133" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="9">6–18 months</text>
 <line x1="112" y1="80" x2="148" y2="80" stroke="rgba(156,163,175,.5)" stroke-width="1.5" marker-end="url(#arr-t)"/><text x="130" y="72" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="8">Prismm</text>
@@ -235,15 +236,40 @@
 <g class="st4"><rect x="377" y="56" width="36" height="48" rx="8" fill="rgba(15,110,86,.08)" stroke="rgba(15,110,86,.3)" stroke-width="0.5"/><text x="395" y="84" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="9" font-weight="600">Done</text></g>
 <g class="ck1" style="transform-origin:395px 56px"><circle cx="395" cy="44" r="12" fill="rgba(15,110,86,.1)" stroke="rgba(15,110,86,.25)" stroke-width="1"/><text x="395" y="49" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">✓</text></g>
 <rect x="150" y="152" width="268" height="24" rx="6" fill="rgba(15,110,86,.04)" stroke="rgba(15,110,86,.12)" stroke-width="0.5"/><text x="284" y="168" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="9">Weeks · automated · compliant · auditable</text>
-</svg></div>
-</div></div></div></section>
+</svg>
+      </div>
 
-<!-- GROWTH — unchanged -->
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__btn" onclick="carMove('trans',-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel__dots" id="car-trans-dots">
+        <div class="carousel__dot active" onclick="carGo('trans',0)"></div>
+        <div class="carousel__dot" onclick="carGo('trans',1)"></div>
+      </div>
+      <button class="carousel__btn" onclick="carMove('trans',1)" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+</div></div></section>
+
+<!-- GROWTH — carousel -->
 <section class="section" id="growth" aria-labelledby="grow-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--gold">Solution 03</span><h2 id="grow-heading">Intergenerational relationship capture</h2><p class="text-lg">When a customer dies, their beneficiaries are your next customers, if you can reach them. Today, most institutions lose these relationships entirely.</p><p>Prismm captures beneficiary and next-of-kin data at account origination, creating a direct pathway to the next generation. When a life event occurs, these connections are already established, turning account transitions into acquisition opportunities.</p></div>
-<div class="feature-row__visual ab-wrap">
-<div class="ab-toggle"><button class="active" onclick="abSwitch('gr',0,this)">A</button><button onclick="abSwitch('gr',1,this)">B</button><span>toggle options</span></div>
-<div class="ab-option active" id="gr-0"><svg width="200" height="140" viewBox="0 0 200 140" fill="none"><circle cx="100" cy="34" r="18" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/><text x="100" y="38" text-anchor="middle" fill="#1F2937" font-family="sans-serif" font-size="9">Account holder</text><line x1="82" y1="50" x2="54" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="118" y1="50" x2="146" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="100" y1="52" x2="100" y2="80" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><circle cx="54" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="100" cy="95" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="146" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><text x="100" y="128" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10" font-weight="600">Beneficiaries → New customers</text></svg></div>
-<div class="ab-option" id="gr-1"><svg width="100%" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<div class="feature-row__visual" style="padding:0">
+  <div class="carousel" id="car-grow">
+    <div class="carousel__track">
+
+      <!-- Slide A: org-chart dots -->
+      <div class="carousel__slide active">
+        <svg width="200" height="140" viewBox="0 0 200 140" fill="none"><circle cx="100" cy="34" r="18" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/><text x="100" y="38" text-anchor="middle" fill="#1F2937" font-family="sans-serif" font-size="9">Account holder</text><line x1="82" y1="50" x2="54" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="118" y1="50" x2="146" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="100" y1="52" x2="100" y2="80" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><circle cx="54" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="100" cy="95" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="146" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><text x="100" y="128" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10" font-weight="600">Beneficiaries → New customers</text></svg>
+      </div>
+
+      <!-- Slide B: animated relationship flow -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <circle class="igpls" cx="110" cy="80" r="26" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.2)" stroke-width="1"/>
 <text x="110" y="76" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="8">Account</text><text x="110" y="88" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="8">holder</text>
 <text x="110" y="120" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="8">Captured at origination</text>
@@ -260,8 +286,25 @@
 <rect x="40" y="168" width="340" height="30" rx="6" fill="rgba(102,88,234,.03)" stroke="rgba(102,88,234,.1)" stroke-width="0.5"/>
 <text x="210" y="181" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="9">Connections established at origination</text>
 <text x="210" y="193" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8">Account transitions become acquisition opportunities</text>
-</svg></div>
-</div></div></div></section>
+</svg>
+      </div>
+
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__btn" onclick="carMove('grow',-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel__dots" id="car-grow-dots">
+        <div class="carousel__dot active" onclick="carGo('grow',0)"></div>
+        <div class="carousel__dot" onclick="carGo('grow',1)"></div>
+      </div>
+      <button class="carousel__btn" onclick="carMove('grow',1)" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+</div></div></section>
 
 <!-- COMPARISON TABLE -->
 <section class="section section--light" aria-labelledby="comp-heading"><div class="container"><div class="section__header section__header--center reveal"><span class="label">Comparison</span><h2 id="comp-heading">How Prismm differs from everything else</h2></div><div class="reveal" style="overflow-x:auto"><table class="comparison-table" role="table" aria-label="Feature comparison"><thead><tr><th scope="col">Capability</th><th scope="col">Estate planning</th><th scope="col">Vaults</th><th scope="col">Manual</th><th scope="col">Prismm</th></tr></thead><tbody><tr><td><strong>Embeds at account origination</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Core banking integration</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Life event verification</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Triggered access</strong></td><td class="cross">✕</td><td>Partial</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Account transition automation</strong></td><td class="cross">✕</td><td class="cross">✕</td><td>6–18 mo</td><td class="check">✓ Weeks</td></tr><tr><td><strong>Deposit retention at death</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Beneficiary capture</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr></tbody></table></div></div></section>
@@ -286,12 +329,6 @@ function carMove(id,dir){
   var count=document.querySelectorAll('#car-'+id+' .carousel__slide').length;
   var s=carState[id]||{idx:0};
   carGo(id,(s.idx+dir+count)%count);
-}
-function abSwitch(prefix,idx,btn){
-  var wrap=btn.closest('.ab-wrap');
-  wrap.querySelectorAll('.ab-option').forEach(function(el,i){el.classList.toggle('active',i===idx)});
-  wrap.querySelectorAll('.ab-toggle button').forEach(function(b){b.classList.remove('active')});
-  btn.classList.add('active');
 }
 </script>
 </body></html>
