@@ -12,7 +12,6 @@
 .carousel__dots{display:flex;gap:6px;align-items:center}
 .carousel__dot{width:6px;height:6px;border-radius:50%;background:rgba(102,88,234,.2);transition:background .2s,transform .2s;cursor:pointer}
 .carousel__dot.active{background:#6658EA;transform:scale(1.25)}
-/* existing animation keyframes */
 @keyframes stepIn{0%,100%{opacity:0;transform:translateY(6px)}15%,80%{opacity:1;transform:translateY(0)}}
 @keyframes lineGrow{0%,100%{stroke-dashoffset:60}20%,80%{stroke-dashoffset:0}}
 @keyframes checkPop{0%,100%{transform:scale(0);opacity:0}25%,75%{transform:scale(1);opacity:1}}
@@ -48,13 +47,11 @@
 <main id="main">
 <section class="page-header"><div class="container"><span class="label">Why Prismm</span><h1>Not just storage. Not a tool.<br>Infrastructure.</h1><p>The distinction matters. Here's why Prismm exists in a category of its own and why no existing solution addresses what banks actually need.</p></div></section>
 
-<!-- RETENTION — carousel (A, B, C) -->
+<!-- RETENTION — carousel -->
 <section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
 <div class="feature-row__visual" style="padding:0">
   <div class="carousel" id="car-ret">
     <div class="carousel__track">
-
-      <!-- Slide A: 70% ring -->
       <div class="carousel__slide active">
         <svg width="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="150" r="110" fill="rgba(249,101,91,.04)" stroke="rgba(249,101,91,.12)" stroke-width="2"/>
@@ -63,8 +60,6 @@
           <text x="200" y="176" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">Deposits retained with Prismm</text>
         </svg>
       </div>
-
-      <!-- Slide B: animated scatter vs flow -->
       <div class="carousel__slide">
         <svg width="100%" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
@@ -72,21 +67,12 @@
           <rect x="75" y="38" width="150" height="52" rx="10" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/>
           <text x="150" y="70" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
           <text x="150" y="108" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12">life event occurs</text>
-          <circle cx="150" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0; -85,-62; -85,-62; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/></circle>
-          <text x="150" y="153" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11"><animateTransform attributeName="transform" type="translate" values="0,0; -85,-62; -85,-62; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/>$</text>
-          <circle cx="138" cy="152" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0; -40,-88; -40,-88; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/></circle>
-          <text x="138" y="156" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10"><animateTransform attributeName="transform" type="translate" values="0,0; -40,-88; -40,-88; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/>$</text>
-          <circle cx="162" cy="145" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0; 38,-78; 38,-78; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/></circle>
-          <text x="162" y="149" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10"><animateTransform attributeName="transform" type="translate" values="0,0; 38,-78; 38,-78; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>$</text>
-          <circle cx="156" cy="160" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0; 88,-48; 88,-48; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/></circle>
-          <text x="156" y="164" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="9"><animateTransform attributeName="transform" type="translate" values="0,0; 88,-48; 88,-48; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/>$</text>
+          <circle cx="150" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;-85,-62;-85,-62;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/></circle>
+          <circle cx="138" cy="152" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;-40,-88;-40,-88;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/></circle>
+          <circle cx="162" cy="145" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"><animateTransform attributeName="transform" type="translate" values="0,0;38,-78;38,-78;0,0" keyTimes="0;0.45;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/></circle>
           <text x="50" y="84" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Other bank</text>
           <text x="88" y="52" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Attorney</text>
           <text x="195" y="60" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Friction</text>
-          <text x="230" y="84" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>Lost</text>
-          <rect x="68" y="218" width="164" height="40" rx="8" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/></rect>
-          <text x="150" y="235" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/>70% of deposits leave</text>
-          <text x="150" y="251" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/>the institution</text>
           <line x1="300" y1="10" x2="300" y2="295" stroke="rgba(156,163,175,.3)" stroke-width="1" stroke-dasharray="5 4"/>
           <text x="450" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">With Prismm</text>
           <rect x="375" y="38" width="150" height="52" rx="10" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/>
@@ -94,84 +80,28 @@
           <rect x="352" y="104" width="196" height="30" rx="8" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.2)" stroke-width="0.5"/>
           <text x="450" y="124" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="12">Prismm Anchor</text>
           <rect x="390" y="224" width="120" height="60" rx="12" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.25)" stroke-width="0.5"/>
-          <text x="450" y="252" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="14" font-weight="600">Vault</text>
-          <text x="450" y="270" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="11">retained</text>
-          <circle cx="450" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,68; 0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/></circle>
-          <text x="450" y="153" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,68; 0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/>$</text>
-          <circle cx="432" cy="148" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.78;0.9" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,62; 0,62" keyTimes="0;0.2;0.82;1" dur="3.5s" repeatCount="indefinite"/></circle>
-          <circle cx="468" cy="148" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.3;0.85;0.95" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,70; 0,70" keyTimes="0;0.3;0.88;1" dur="3.5s" repeatCount="indefinite"/></circle>
+          <text x="450" y="258" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="14" font-weight="600">Vault · retained</text>
+          <circle cx="450" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,0;0,68;0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/></circle>
           <rect x="334" y="272" width="232" height="32" rx="8" fill="rgba(15,110,86,.05)" stroke="rgba(15,110,86,.15)" stroke-width="0.5"/>
           <text x="450" y="292" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">70% retention · structured · compliant</text>
         </svg>
       </div>
-
-      <!-- Slide C: particle gravity well — dark field, gold dots pulled into vault -->
       <div class="carousel__slide">
         <svg width="100%" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- dark field -->
           <rect width="560" height="300" rx="16" fill="#0F1117"/>
-          <!-- vault glow at center -->
-          <circle cx="280" cy="150" r="48" fill="rgba(102,88,234,.12)"><animate attributeName="r" values="44;52;44" dur="3s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.12;0.22;0.12" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="280" cy="150" r="48" fill="rgba(102,88,234,.12)"><animate attributeName="r" values="44;52;44" dur="3s" repeatCount="indefinite"/></circle>
           <circle cx="280" cy="150" r="28" fill="rgba(102,88,234,.25)"><animate attributeName="r" values="24;30;24" dur="3s" repeatCount="indefinite"/></circle>
-          <!-- vault label -->
           <text x="280" y="146" text-anchor="middle" fill="#A99FF5" font-family="sans-serif" font-size="11" font-weight="700">VAULT</text>
           <text x="280" y="161" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9">Prismm</text>
-          <!-- particle 1: drifts from top-left → vault -->
-          <circle cx="60" cy="55" r="5" fill="#FAC775" opacity="0.9">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 198,83; 198,83; 0,0" keyTimes="0;0.1;0.65;0.85;1" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.7;0.85;1" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="5;5;2;2;5" keyTimes="0;0.1;0.65;0.85;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 2: top center -->
-          <circle cx="200" cy="30" r="4" fill="#FAC775" opacity="0.8">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 75,112; 75,112; 0,0" keyTimes="0;0.15;0.68;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.8;0.8;0;0;0.8" keyTimes="0;0.15;0.7;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="4;4;1.5;1.5;4" keyTimes="0;0.15;0.68;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 3: top-right -->
-          <circle cx="430" cy="42" r="6" fill="#FAC775" opacity="0.85">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -162,100; -162,100; 0,0" keyTimes="0;0.12;0.66;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.12;0.7;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="6;6;2;2;6" keyTimes="0;0.12;0.66;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 4: right -->
-          <circle cx="510" cy="150" r="5" fill="#FAC775" opacity="0.75">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -240,0; -240,0; 0,0" keyTimes="0;0.08;0.62;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.75;0.75;0;0;0.75" keyTimes="0;0.08;0.65;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="5;5;1.5;1.5;5" keyTimes="0;0.08;0.62;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 5: bottom-right -->
-          <circle cx="460" cy="245" r="4" fill="#FAC775" opacity="0.8">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; -192,-102; -192,-102; 0,0" keyTimes="0;0.1;0.64;0.85;1" dur="4s" begin="0.25s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.8;0.8;0;0;0.8" keyTimes="0;0.1;0.67;0.85;1" dur="4s" begin="0.25s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="4;4;1.5;1.5;4" keyTimes="0;0.1;0.64;0.85;1" dur="4s" begin="0.25s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 6: bottom-center -->
-          <circle cx="280" cy="268" r="5" fill="#FAC775" opacity="0.9">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,-126; 0,-126; 0,0" keyTimes="0;0.1;0.63;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.66;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="5;5;2;2;5" keyTimes="0;0.1;0.63;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 7: bottom-left -->
-          <circle cx="80" cy="240" r="4" fill="#FAC775" opacity="0.7">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 186,-98; 186,-98; 0,0" keyTimes="0;0.12;0.65;0.85;1" dur="4s" begin="0.9s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.7;0.7;0;0;0.7" keyTimes="0;0.12;0.68;0.85;1" dur="4s" begin="0.9s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="4;4;1.5;1.5;4" keyTimes="0;0.12;0.65;0.85;1" dur="4s" begin="0.9s" repeatCount="indefinite"/>
-          </circle>
-          <!-- particle 8: left -->
-          <circle cx="38" cy="148" r="6" fill="#FAC775" opacity="0.85">
-            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 230,0; 230,0; 0,0" keyTimes="0;0.1;0.62;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.1;0.65;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/>
-            <animate attributeName="r" values="6;6;2;2;6" keyTimes="0;0.1;0.62;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/>
-          </circle>
-          <!-- orbit trail ring (faint) -->
-          <circle cx="280" cy="150" r="80" fill="none" stroke="rgba(102,88,234,.08)" stroke-width="1" stroke-dasharray="4 6"/>
-          <circle cx="280" cy="150" r="120" fill="none" stroke="rgba(250,199,117,.06)" stroke-width="1" stroke-dasharray="3 8"/>
-          <!-- stat label -->
+          <circle cx="60" cy="55" r="5" fill="#FAC775" opacity="0.9"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;198,83;198,83;0,0" keyTimes="0;0.1;0.65;0.85;1" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.7;0.85;1" dur="4s" repeatCount="indefinite"/></circle>
+          <circle cx="200" cy="30" r="4" fill="#FAC775" opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;75,112;75,112;0,0" keyTimes="0;0.15;0.68;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0;0;0.8" keyTimes="0;0.15;0.7;0.85;1" dur="4s" begin="0.4s" repeatCount="indefinite"/></circle>
+          <circle cx="430" cy="42" r="6" fill="#FAC775" opacity="0.85"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-162,100;-162,100;0,0" keyTimes="0;0.12;0.66;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.12;0.7;0.85;1" dur="4s" begin="0.7s" repeatCount="indefinite"/></circle>
+          <circle cx="510" cy="150" r="5" fill="#FAC775" opacity="0.75"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-240,0;-240,0;0,0" keyTimes="0;0.08;0.62;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.75;0.75;0;0;0.75" keyTimes="0;0.08;0.65;0.85;1" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
+          <circle cx="280" cy="268" r="5" fill="#FAC775" opacity="0.9"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;0,-126;0,-126;0,0" keyTimes="0;0.1;0.63;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.9;0.9;0;0;0.9" keyTimes="0;0.1;0.66;0.85;1" dur="4s" begin="0.55s" repeatCount="indefinite"/></circle>
+          <circle cx="38" cy="148" r="6" fill="#FAC775" opacity="0.85"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;230,0;230,0;0,0" keyTimes="0;0.1;0.62;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0.85;0;0;0.85" keyTimes="0;0.1;0.65;0.85;1" dur="4s" begin="0.35s" repeatCount="indefinite"/></circle>
           <text x="280" y="270" text-anchor="middle" fill="rgba(163,163,163,.6)" font-family="sans-serif" font-size="11">Every deposit. Anchored.</text>
         </svg>
       </div>
-
     </div>
     <div class="carousel__controls">
       <button class="carousel__btn" onclick="carMove('ret',-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -186,247 +116,21 @@
 </div>
 </div></div></section>
 
-<!-- TRANSITION — carousel (A, B, C) -->
+<!-- TRANSITION — video -->
 <section class="section section--light" id="transition" aria-labelledby="trans-heading"><div class="container"><div class="feature-row feature-row--reverse reveal"><div><span class="label">Solution 02</span><h2 id="trans-heading">Account transition automation</h2><p class="text-lg">The average manual account transition takes 6 to 18 months of phone calls, paper forms, legal review, and compliance checks. Prismm replaces this with structured digital workflows.</p><p>From life event verification through final account transition, Prismm Anchor automates each step with compliance-ready audit trails. Your operations team handles in weeks what currently takes months.</p></div>
 <div class="feature-row__visual" style="padding:0">
-  <div class="carousel" id="car-trans">
-    <div class="carousel__track">
-
-      <!-- Slide A: static 6-18 months → Weeks -->
-      <div class="carousel__slide active">
-        <svg width="220" height="130" viewBox="0 0 220 130" fill="none"><rect x="10" y="16" width="84" height="32" rx="6" fill="rgba(249,101,91,.06)" stroke="rgba(249,101,91,.2)" stroke-width="1"/><text x="52" y="37" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="11" font-weight="600">6–18 months</text><text x="52" y="64" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Manual process</text><text x="110" y="37" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">→</text><rect x="126" y="16" width="84" height="32" rx="6" fill="rgba(102,88,234,.05)" stroke="rgba(102,88,234,.2)" stroke-width="1"/><text x="168" y="37" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="11" font-weight="700">Weeks</text><text x="168" y="64" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="9">With Prismm</text><rect x="24" y="80" width="172" height="36" rx="7" fill="rgba(102,88,234,.03)" stroke="rgba(102,88,234,.1)" stroke-width="1"/><text x="110" y="96" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10">Verify → Notify → Delegate → Transition</text><text x="110" y="110" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Automated, compliant, auditable</text></svg>
-      </div>
-
-      <!-- Slide B: animated pipeline with paper chaos -->
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<g class="paper" style="transform-origin:60px 80px"><rect x="28" y="40" width="54" height="68" rx="4" fill="rgba(31,41,55,.03)" stroke="rgba(31,41,55,.12)" stroke-width="1" transform="rotate(-7,55,74)"/><rect x="32" y="36" width="54" height="68" rx="4" fill="rgba(31,41,55,.03)" stroke="rgba(31,41,55,.12)" stroke-width="1" transform="rotate(-2,59,70)"/><rect x="36" y="32" width="54" height="68" rx="4" fill="rgba(31,41,55,.05)" stroke="rgba(31,41,55,.18)" stroke-width="1"/><line x1="46" y1="48" x2="80" y2="48" stroke="rgba(31,41,55,.18)" stroke-width="1"/><line x1="46" y1="58" x2="80" y2="58" stroke="rgba(31,41,55,.13)" stroke-width="1"/><line x1="46" y1="68" x2="70" y2="68" stroke="rgba(31,41,55,.13)" stroke-width="1"/></g>
-<rect x="22" y="118" width="80" height="22" rx="5" fill="rgba(163,45,45,.06)" stroke="rgba(163,45,45,.15)" stroke-width="0.5"/><text x="62" y="133" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="9">6–18 months</text>
-<line x1="112" y1="80" x2="148" y2="80" stroke="rgba(156,163,175,.5)" stroke-width="1.5" marker-end="url(#arr-t)"/><text x="130" y="72" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="8">Prismm</text>
-<g class="st1"><rect x="155" y="56" width="56" height="48" rx="8" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="0.5"/><text x="183" y="78" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="10" font-weight="600">Verify</text><text x="183" y="92" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8">life event</text></g>
-<line class="ln1" x1="211" y1="80" x2="227" y2="80" stroke="#7F77DD" stroke-width="1.5" stroke-dasharray="60" stroke-dashoffset="60" marker-end="url(#arr-t)"/>
-<g class="st2"><rect x="229" y="56" width="56" height="48" rx="8" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="0.5"/><text x="257" y="78" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="10" font-weight="600">Notify</text><text x="257" y="92" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8">beneficiary</text></g>
-<line class="ln2" x1="285" y1="80" x2="301" y2="80" stroke="#7F77DD" stroke-width="1.5" stroke-dasharray="60" stroke-dashoffset="60" marker-end="url(#arr-t)"/>
-<g class="st3"><rect x="303" y="56" width="56" height="48" rx="8" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="0.5"/><text x="331" y="78" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="10" font-weight="600">Delegate</text><text x="331" y="92" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8">access</text></g>
-<line class="ln3" x1="359" y1="80" x2="375" y2="80" stroke="#7F77DD" stroke-width="1.5" stroke-dasharray="60" stroke-dashoffset="60" marker-end="url(#arr-t)"/>
-<g class="st4"><rect x="377" y="56" width="36" height="48" rx="8" fill="rgba(15,110,86,.08)" stroke="rgba(15,110,86,.3)" stroke-width="0.5"/><text x="395" y="84" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="9" font-weight="600">Done</text></g>
-<g class="ck1" style="transform-origin:395px 56px"><circle cx="395" cy="44" r="12" fill="rgba(15,110,86,.1)" stroke="rgba(15,110,86,.25)" stroke-width="1"/><text x="395" y="49" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">✓</text></g>
-<rect x="150" y="152" width="268" height="24" rx="6" fill="rgba(15,110,86,.04)" stroke="rgba(15,110,86,.12)" stroke-width="0.5"/><text x="284" y="168" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="9">Weeks · automated · compliant · auditable</text>
-        </svg>
-      </div>
-
-      <!-- Slide C: terminal / CLI typewriter — dark, monospace, green text -->
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- terminal window -->
-          <rect width="520" height="260" rx="12" fill="#0D1117"/>
-          <!-- title bar -->
-          <rect width="520" height="32" rx="12" fill="#161B22"/>
-          <rect x="0" y="20" width="520" height="12" fill="#161B22"/>
-          <circle cx="18" cy="16" r="5" fill="#FF5F57"/>
-          <circle cx="34" cy="16" r="5" fill="#FFBD2E"/>
-          <circle cx="50" cy="16" r="5" fill="#28C840"/>
-          <text x="260" y="20" text-anchor="middle" fill="rgba(255,255,255,.3)" font-family="monospace" font-size="10">prismm-anchor — transition-workflow</text>
-          <!-- prompt lines that appear sequentially using SMIL opacity -->
-          <!-- line 1 -->
-          <text x="20" y="58" fill="rgba(99,255,99,.5)" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;1;1;1;1;1;1;1" keyTimes="0;0.05;0.2;0.4;0.6;0.8;0.9;1" dur="6s" repeatCount="indefinite"/>
-            <tspan fill="rgba(99,255,99,.4)">$</tspan> prismm trigger --event death --account ACT-00847
-          </text>
-          <!-- line 2 -->
-          <text x="20" y="80" fill="#63FF63" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;1;1" keyTimes="0;0.1;0.18;0.4;0.6;0.8;0.9;1" dur="6s" repeatCount="indefinite"/>
-            ✓  Life event verified · ACT-00847 · 2026-03-14
-          </text>
-          <!-- line 3 -->
-          <text x="20" y="102" fill="rgba(99,255,99,.7)" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;1;1" keyTimes="0;0.1;0.25;0.33;0.6;0.8;0.9;1" dur="6s" repeatCount="indefinite"/>
-            →  Locating beneficiaries on record...
-          </text>
-          <!-- line 4 -->
-          <text x="20" y="124" fill="#63FF63" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;1;1;1;1" keyTimes="0;0.1;0.25;0.38;0.46;0.8;0.9;1" dur="6s" repeatCount="indefinite"/>
-            ✓  3 beneficiaries found · notifications queued
-          </text>
-          <!-- line 5 -->
-          <text x="20" y="146" fill="rgba(99,255,99,.7)" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;0;1;1;1" keyTimes="0;0.1;0.25;0.38;0.5;0.58;0.9;1" dur="6s" repeatCount="indefinite"/>
-            →  Generating compliance audit trail...
-          </text>
-          <!-- line 6 -->
-          <text x="20" y="168" fill="#63FF63" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;0;0;1;1" keyTimes="0;0.1;0.25;0.38;0.5;0.62;0.70;1" dur="6s" repeatCount="indefinite"/>
-            ✓  Audit log #TRL-2847 · compliant · immutable
-          </text>
-          <!-- line 7 -->
-          <text x="20" y="190" fill="rgba(99,255,99,.7)" font-family="monospace" font-size="11" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;0;0;0;1" keyTimes="0;0.1;0.25;0.38;0.5;0.62;0.75;0.82" dur="6s" repeatCount="indefinite"/>
-            →  Delegating account access to beneficiary 1...
-          </text>
-          <!-- success banner -->
-          <rect x="16" y="210" width="488" height="30" rx="6" fill="rgba(15,110,86,.2)" stroke="rgba(40,200,64,.3)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1;0" keyTimes="0;0.1;0.25;0.38;0.5;0.62;0.75;0.82;0.88;0.95;1" dur="6s" repeatCount="indefinite"/>
-          </rect>
-          <text x="260" y="230" text-anchor="middle" fill="#28C840" font-family="monospace" font-size="11" font-weight="700" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1;0" keyTimes="0;0.1;0.25;0.38;0.5;0.62;0.75;0.82;0.88;0.95;1" dur="6s" repeatCount="indefinite"/>
-            ✓  TRANSITION COMPLETE · elapsed: 4 days 2 hrs
-          </text>
-          <!-- blinking cursor -->
-          <rect x="20" y="242" width="8" height="14" rx="1" fill="#63FF63">
-            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="1s" repeatCount="indefinite"/>
-          </rect>
-        </svg>
-      </div>
-
-    </div>
-    <div class="carousel__controls">
-      <button class="carousel__btn" onclick="carMove('trans',-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <div class="carousel__dots" id="car-trans-dots">
-        <div class="carousel__dot active" onclick="carGo('trans',0)"></div>
-        <div class="carousel__dot" onclick="carGo('trans',1)"></div>
-        <div class="carousel__dot" onclick="carGo('trans',2)"></div>
-      </div>
-      <button class="carousel__btn" onclick="carMove('trans',1)" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-    </div>
-  </div>
+  <video autoplay loop muted playsinline style="width:100%;max-width:560px;border-radius:12px;display:block;">
+    <source src="https://res.cloudinary.com/dialhpycd/video/upload/v1774452074/Prismm_New_Site_Images_2_axni2y.mp4" type="video/mp4">
+  </video>
 </div>
 </div></div></section>
 
-<!-- GROWTH — carousel (A, B, C) -->
+<!-- GROWTH — video -->
 <section class="section" id="growth" aria-labelledby="grow-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--gold">Solution 03</span><h2 id="grow-heading">Intergenerational relationship capture</h2><p class="text-lg">When a customer dies, their beneficiaries are your next customers, if you can reach them. Today, most institutions lose these relationships entirely.</p><p>Prismm captures beneficiary and next-of-kin data at account origination, creating a direct pathway to the next generation. When a life event occurs, these connections are already established, turning account transitions into acquisition opportunities.</p></div>
 <div class="feature-row__visual" style="padding:0">
-  <div class="carousel" id="car-grow">
-    <div class="carousel__track">
-
-      <!-- Slide A: org-chart dots -->
-      <div class="carousel__slide active">
-        <svg width="200" height="140" viewBox="0 0 200 140" fill="none"><circle cx="100" cy="34" r="18" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/><text x="100" y="38" text-anchor="middle" fill="#1F2937" font-family="sans-serif" font-size="9">Account holder</text><line x1="82" y1="50" x2="54" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="118" y1="50" x2="146" y2="76" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><line x1="100" y1="52" x2="100" y2="80" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/><circle cx="54" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="100" cy="95" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><circle cx="146" cy="90" r="14" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.2)" stroke-width="1.5"/><text x="100" y="128" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="10" font-weight="600">Beneficiaries → New customers</text></svg>
-      </div>
-
-      <!-- Slide B: animated relationship flow -->
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<circle class="igpls" cx="110" cy="80" r="26" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.2)" stroke-width="1"/>
-<text x="110" y="76" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="8">Account</text><text x="110" y="88" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="8">holder</text>
-<text x="110" y="120" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="8">Captured at origination</text>
-<g class="igev"><rect x="148" y="64" width="72" height="26" rx="6" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5"/><text x="184" y="80" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="9">Life event</text></g>
-<line class="igl1" x1="136" y1="64" x2="278" y2="36" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="160" marker-end="url(#arr-g)"/>
-<line class="igl2" x1="136" y1="80" x2="278" y2="80" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="160" marker-end="url(#arr-g)"/>
-<line class="igl3" x1="136" y1="96" x2="278" y2="124" stroke="#534AB7" stroke-width="1.5" stroke-dasharray="160" marker-end="url(#arr-g)"/>
-<g class="ign1" style="transform-origin:298px 36px"><circle cx="298" cy="36" r="18" fill="rgba(102,88,234,.07)" stroke="rgba(102,88,234,.22)" stroke-width="0.5"/><text x="298" y="32" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">Beneficiary</text><text x="298" y="42" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">1</text></g>
-<g class="iglbl"><rect x="320" y="26" width="76" height="20" rx="5" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.18)" stroke-width="0.5"/><text x="358" y="40" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="8">New customer</text></g>
-<g class="ign2" style="transform-origin:298px 80px"><circle cx="298" cy="80" r="18" fill="rgba(102,88,234,.07)" stroke="rgba(102,88,234,.22)" stroke-width="0.5"/><text x="298" y="76" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">Beneficiary</text><text x="298" y="86" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">2</text></g>
-<g class="iglbl"><rect x="320" y="70" width="76" height="20" rx="5" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.18)" stroke-width="0.5"/><text x="358" y="84" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="8">New customer</text></g>
-<g class="ign3" style="transform-origin:298px 124px"><circle cx="298" cy="124" r="18" fill="rgba(102,88,234,.07)" stroke="rgba(102,88,234,.22)" stroke-width="0.5"/><text x="298" y="120" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">Beneficiary</text><text x="298" y="130" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="7">3</text></g>
-<g class="iglbl"><rect x="320" y="114" width="76" height="20" rx="5" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.18)" stroke-width="0.5"/><text x="358" y="128" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="8">New customer</text></g>
-<rect x="40" y="168" width="340" height="30" rx="6" fill="rgba(102,88,234,.03)" stroke="rgba(102,88,234,.1)" stroke-width="0.5"/>
-<text x="210" y="181" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="9">Connections established at origination</text>
-<text x="210" y="193" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="8">Account transitions become acquisition opportunities</text>
-        </svg>
-      </div>
-
-      <!-- Slide C: concentric ripple / social graph pulse — dark bg, expanding rings reveal nodes -->
-      <div class="carousel__slide">
-        <svg width="100%" viewBox="0 0 520 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="520" height="280" rx="16" fill="#0A0E1A"/>
-          <!-- ripple rings emanating from center -->
-          <circle cx="260" cy="130" r="0" fill="none" stroke="rgba(102,88,234,.5)" stroke-width="1.5">
-            <animate attributeName="r" values="0;60;120;180" dur="4s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" values="0.6;0.3;0.1;0" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="260" cy="130" r="0" fill="none" stroke="rgba(102,88,234,.4)" stroke-width="1">
-            <animate attributeName="r" values="0;60;120;180" dur="4s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" values="0.5;0.25;0.08;0" dur="4s" begin="1s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="260" cy="130" r="0" fill="none" stroke="rgba(250,199,117,.3)" stroke-width="1">
-            <animate attributeName="r" values="0;60;120;180" dur="4s" begin="2s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-opacity" values="0.4;0.2;0.06;0" dur="4s" begin="2s" repeatCount="indefinite"/>
-          </circle>
-          <!-- central node: account holder -->
-          <circle cx="260" cy="130" r="22" fill="rgba(31,41,55,.8)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-          <text x="260" y="127" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="sans-serif" font-size="8">Account</text>
-          <text x="260" y="138" text-anchor="middle" fill="rgba(255,255,255,.8)" font-family="sans-serif" font-size="8">holder</text>
-          <!-- ring 1 nodes — pop in as ripple hits ~60px radius -->
-          <!-- node R1-top -->
-          <circle cx="260" cy="60" r="14" fill="rgba(102,88,234,.15)" stroke="rgba(102,88,234,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.18;0.26;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="260" y="64" text-anchor="middle" fill="#A99FF5" font-family="sans-serif" font-size="7" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.18;0.26;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Spouse
-          </text>
-          <!-- node R1-left -->
-          <circle cx="196" cy="150" r="14" fill="rgba(102,88,234,.15)" stroke="rgba(102,88,234,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.2;0.28;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="196" y="154" text-anchor="middle" fill="#A99FF5" font-family="sans-serif" font-size="7" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.2;0.28;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Child 1
-          </text>
-          <!-- node R1-right -->
-          <circle cx="324" cy="150" r="14" fill="rgba(102,88,234,.15)" stroke="rgba(102,88,234,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.22;0.30;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="324" y="154" text-anchor="middle" fill="#A99FF5" font-family="sans-serif" font-size="7" opacity="0">
-            <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;0.22;0.30;0.5;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Child 2
-          </text>
-          <!-- ring 2 nodes — pop in as ripple hits ~120px -->
-          <!-- node R2-far-left -->
-          <circle cx="138" cy="80" r="12" fill="rgba(15,110,86,.15)" stroke="rgba(15,110,86,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.3;0.38;0.46;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="138" y="84" text-anchor="middle" fill="#4ADE80" font-family="sans-serif" font-size="6.5" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.3;0.38;0.46;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Grandchild
-          </text>
-          <!-- node R2-top-right -->
-          <circle cx="370" cy="68" r="12" fill="rgba(15,110,86,.15)" stroke="rgba(15,110,86,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.33;0.40;0.48;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="370" y="72" text-anchor="middle" fill="#4ADE80" font-family="sans-serif" font-size="6.5" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.33;0.40;0.48;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Trustee
-          </text>
-          <!-- node R2-bottom -->
-          <circle cx="260" cy="210" r="12" fill="rgba(15,110,86,.15)" stroke="rgba(15,110,86,.5)" stroke-width="1" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.35;0.43;0.50;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-          </circle>
-          <text x="260" y="214" text-anchor="middle" fill="#4ADE80" font-family="sans-serif" font-size="6.5" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;1;1;1;0" keyTimes="0;0.35;0.43;0.50;0.75;0.9;1" dur="4s" repeatCount="indefinite"/>
-            Estate atty
-          </text>
-          <!-- "New customer" labels flashing on ring-2 nodes -->
-          <rect x="102" y="96" width="72" height="16" rx="4" fill="rgba(15,110,86,.2)" stroke="rgba(15,110,86,.4)" stroke-width="0.5" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.4;0.5;0.58;0.68;0.85;1" dur="4s" repeatCount="indefinite"/>
-          </rect>
-          <text x="138" y="107" text-anchor="middle" fill="#4ADE80" font-family="sans-serif" font-size="7" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.4;0.5;0.58;0.68;0.85;1" dur="4s" repeatCount="indefinite"/>
-            → New customer
-          </text>
-          <rect x="334" y="84" width="72" height="16" rx="4" fill="rgba(15,110,86,.2)" stroke="rgba(15,110,86,.4)" stroke-width="0.5" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.43;0.52;0.60;0.70;0.85;1" dur="4s" repeatCount="indefinite"/>
-          </rect>
-          <text x="370" y="95" text-anchor="middle" fill="#4ADE80" font-family="sans-serif" font-size="7" opacity="0">
-            <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.43;0.52;0.60;0.70;0.85;1" dur="4s" repeatCount="indefinite"/>
-            → New customer
-          </text>
-          <!-- bottom label -->
-          <text x="260" y="255" text-anchor="middle" fill="rgba(163,163,163,.5)" font-family="sans-serif" font-size="11">Every life event — a relationship opportunity</text>
-        </svg>
-      </div>
-
-    </div>
-    <div class="carousel__controls">
-      <button class="carousel__btn" onclick="carMove('grow',-1)" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <div class="carousel__dots" id="car-grow-dots">
-        <div class="carousel__dot active" onclick="carGo('grow',0)"></div>
-        <div class="carousel__dot" onclick="carGo('grow',1)"></div>
-        <div class="carousel__dot" onclick="carGo('grow',2)"></div>
-      </div>
-      <button class="carousel__btn" onclick="carMove('grow',1)" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-    </div>
-  </div>
+  <video autoplay loop muted playsinline style="width:100%;max-width:560px;border-radius:12px;display:block;">
+    <source src="https://res.cloudinary.com/dialhpycd/video/upload/v1774452254/Prismm_New_Site_Images_3_m9jb7d.mp4" type="video/mp4">
+  </video>
 </div>
 </div></div></section>
 
@@ -434,25 +138,14 @@
 <section class="section section--light" aria-labelledby="comp-heading"><div class="container"><div class="section__header section__header--center reveal"><span class="label">Comparison</span><h2 id="comp-heading">How Prismm differs from everything else</h2></div><div class="reveal" style="overflow-x:auto"><table class="comparison-table" role="table" aria-label="Feature comparison"><thead><tr><th scope="col">Capability</th><th scope="col">Estate planning</th><th scope="col">Vaults</th><th scope="col">Manual</th><th scope="col">Prismm</th></tr></thead><tbody><tr><td><strong>Embeds at account origination</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Core banking integration</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Life event verification</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Triggered access</strong></td><td class="cross">✕</td><td>Partial</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Account transition automation</strong></td><td class="cross">✕</td><td class="cross">✕</td><td>6–18 mo</td><td class="check">✓ Weeks</td></tr><tr><td><strong>Deposit retention at death</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr><tr><td><strong>Beneficiary capture</strong></td><td class="cross">✕</td><td class="cross">✕</td><td class="cross">✕</td><td class="check">✓</td></tr></tbody></table></div></div></section>
 
 <!-- COST OF INACTION -->
-<section class="section" aria-labelledby="cost-heading"><div class="container"><div class="grid-2 reveal"><div><span class="label label--coral">The cost of inaction</span><h2 id="cost-heading">What happens when you do nothing</h2><p class="text-lg">Every day without estate infrastructure, your institution is losing deposits to attrition you can't see and can't measure.</p><p>When an account holder dies, the clock starts. Without infrastructure to manage the transition, deposits scatter to other banks, to attorneys, to friction and delay. Beneficiaries who could become your next customers are lost before you know they exist.</p></div><div class="stat-grid" style="grid-template-columns:1fr 1fr" role="list"><div class="stat" role="listitem"><div class="stat__number stat__number--coral">70%</div><div class="stat__label">Of wealth changes institutions at a death event</div></div><div class="stat" role="listitem"><div class="stat__number">24T</div><div class="stat__label">Transferring by 2048 with no infrastructure</div></div><div class="stat" role="listitem"><div class="stat__number stat__number--purple">6–18mo</div><div class="stat__label">Average manual account transition per case</div></div><div class="stat" role="listitem"><div class="stat__number">/bin/sh</div><div class="stat__label">Today's solutions purpose-built for banks</div></div></div></div></div></section>
+<section class="section" aria-labelledby="cost-heading"><div class="container"><div class="section__header section__header--center reveal"><span class="label label--coral">The cost of inaction</span><h2 id="cost-heading">Every year without Prismm is a year of compounding loss</h2></div><div class="grid-3 reveal reveal-delay-1"><article class="card"><div class="card__icon card__icon--coral" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Deposit attrition</h3><p>Without structured pathways, estate-linked deposits leave your institution. Each death event is an unmanaged exit. Multiply across your portfolio and the number is material.</p></article><article class="card"><div class="card__icon card__icon--purple" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Operational drag</h3><p>Manual account transitions consume operations staff for months per case. As your customer base ages, this scales into a structural cost problem that compounds annually.</p></article><article class="card"><div class="card__icon card__icon--gold" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Lost relationships</h3><p>Beneficiaries who never hear from your institution after a death event become someone else's customers. There is no second chance to capture that relationship.</p></article></div></div></section>
 
-<section class="manifesto"><div class="container"><blockquote class="manifesto__quote reveal">Every bank has payments infrastructure. None have estate infrastructure. That gap is costing your institution millions in deposits you don't even know you're losing.</blockquote></div></section>
-<section class="cta-section"><div class="container"><h2>See the gap your institution is leaving open</h2><p>Schedule a strategic briefing to understand the estate attrition your institution is experiencing and how to stop it.</p><a href="contact.html" class="btn btn--coral">Schedule a strategic briefing</a></div></section>
+<section class="cta-section"><div class="container"><h2>See Prismm in your institution</h2><p>Schedule a strategic briefing to understand how Prismm would embed into your existing infrastructure and what the retention impact would be for your specific portfolio.</p><a href="contact.html" class="btn btn--coral">Schedule a strategic briefing</a></div></section>
 </main>
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="about.html">About</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
-<script src="js/main.js?v=6"></script>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
 <script>
-var carState={};
-function carGo(id,idx){
-  var s=carState[id]||{idx:0};
-  s.idx=idx; carState[id]=s;
-  document.querySelectorAll('#car-'+id+' .carousel__slide').forEach(function(el,i){el.classList.toggle('active',i===idx)});
-  document.querySelectorAll('#car-'+id+'-dots .carousel__dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
-}
-function carMove(id,dir){
-  var count=document.querySelectorAll('#car-'+id+' .carousel__slide').length;
-  var s=carState[id]||{idx:0};
-  carGo(id,(s.idx+dir+count)%count);
-}
+function carMove(id,dir){const t=document.getElementById('car-'+id);const slides=t.querySelectorAll('.carousel__slide');let cur=0;slides.forEach((s,i)=>{if(s.classList.contains('active'))cur=i});slides[cur].classList.remove('active');cur=(cur+dir+slides.length)%slides.length;slides[cur].classList.add('active');const dots=document.getElementById('car-'+id+'-dots');if(dots){dots.querySelectorAll('.carousel__dot').forEach((d,i)=>d.classList.toggle('active',i===cur))}}
+function carGo(id,idx){const t=document.getElementById('car-'+id);const slides=t.querySelectorAll('.carousel__slide');slides.forEach(s=>s.classList.remove('active'));slides[idx].classList.add('active');const dots=document.getElementById('car-'+id+'-dots');if(dots){dots.querySelectorAll('.carousel__dot').forEach((d,i)=>d.classList.toggle('active',i===idx))}}
+document.querySelectorAll('.reveal').forEach(el=>{const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.15});obs.observe(el)});
 </script>
 </body></html>
