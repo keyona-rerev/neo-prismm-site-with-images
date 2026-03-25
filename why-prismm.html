@@ -1,5 +1,19 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Why Prismm — Not Just Storage. Infrastructure.</title><meta name="description" content="Prismm is not just storage, not estate planning software, and not a bolt-on. It is the infrastructure layer banks need. Deposit retention, account transition automation, and intergenerational growth."><meta name="robots" content="index, follow"><link rel="canonical" href="https://getprismm.com/why-prismm"><link rel="stylesheet" href="css/style.css?v=6"><link rel="icon" href="images/logo-light.svg" type="image/svg+xml">
 <style>
+/* ── Carousel ── */
+.carousel{position:relative;width:100%}
+.carousel__track{display:flex;width:100%;overflow:hidden}
+.carousel__slide{min-width:100%;width:100%;flex-shrink:0;transition:transform .35s ease}
+.carousel__slide svg{width:100%;height:auto;display:block}
+.carousel__controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.carousel__btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(102,88,234,.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;flex-shrink:0}
+.carousel__btn:hover{background:rgba(102,88,234,.06);border-color:rgba(102,88,234,.4)}
+.carousel__btn svg{width:14px;height:14px;stroke:#6658EA;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.carousel__dots{display:flex;gap:6px;align-items:center}
+.carousel__dot{width:6px;height:6px;border-radius:50%;background:rgba(102,88,234,.2);transition:background .2s,transform .2s;cursor:pointer}
+.carousel__dot.active{background:#6658EA;transform:scale(1.25)}
+
+/* ── Old ab styles still needed for transition/growth sections ── */
 .ab-wrap{position:relative}
 .ab-toggle{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .ab-toggle button{font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 14px;border-radius:20px;border:1.5px solid rgba(102,88,234,.25);background:transparent;color:#6658EA;cursor:pointer;transition:background .15s,color .15s}
@@ -7,6 +21,8 @@
 .ab-toggle span{font-size:11px;color:#9CA3AF}
 .ab-option{display:none}
 .ab-option.active{display:block}
+
+/* ── Animations ── */
 @keyframes scatter1{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(-90px,-55px);opacity:0}}
 @keyframes scatter2{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(-50px,-80px);opacity:0}}
 @keyframes scatter3{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(35px,-75px);opacity:0}}
@@ -60,35 +76,87 @@
 <main id="main">
 <section class="page-header"><div class="container"><span class="label">Why Prismm</span><h1>Not just storage. Not a tool.<br>Infrastructure.</h1><p>The distinction matters. Here's why Prismm exists in a category of its own and why no existing solution addresses what banks actually need.</p></div></section>
 
-<!-- RETENTION -->
+<!-- RETENTION — carousel -->
 <section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
-<div class="feature-row__visual ab-wrap">
-<div class="ab-toggle"><button class="active" onclick="abSwitch('ret',0,this)">A</button><button onclick="abSwitch('ret',1,this)">B</button><span>toggle options</span></div>
-<div class="ab-option active" id="ret-0"><svg width="200" height="150" viewBox="0 0 200 150" fill="none"><circle cx="100" cy="75" r="55" fill="rgba(249,101,91,.04)" stroke="rgba(249,101,91,.12)" stroke-width="1.5"/><circle cx="100" cy="75" r="35" fill="rgba(249,101,91,.08)" stroke="rgba(249,101,91,.2)" stroke-width="1.5"/><text x="100" y="72" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="22" font-weight="700">70%</text><text x="100" y="88" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">Deposits retained</text><text x="100" y="100" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="9">with Prismm</text></svg></div>
-<div class="ab-option" id="ret-1"><svg width="100%" viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<text x="105" y="18" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">Without Prismm</text>
-<rect x="55" y="28" width="100" height="40" rx="8" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1"/><text x="105" y="53" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="11" font-weight="600">Bank</text>
-<text x="105" y="84" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="9">life event occurs</text>
-<g class="s1" style="transform-origin:105px 105px"><circle cx="105" cy="105" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="105" y="109" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="8">$</text></g>
-<g class="s2" style="transform-origin:93px 108px"><circle cx="93" cy="108" r="7" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="93" y="112" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="7">$</text></g>
-<g class="s3" style="transform-origin:117px 103px"><circle cx="117" cy="103" r="8" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="117" y="107" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="7">$</text></g>
-<g class="s4" style="transform-origin:110px 116px"><circle cx="110" cy="116" r="7" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="110" y="120" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="6">$</text></g>
-<g class="s5" style="transform-origin:98px 101px"><circle cx="98" cy="101" r="7" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="98" y="105" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="7">$</text></g>
-<g class="abfin"><text x="30" y="68" fill="#9CA3AF" font-family="sans-serif" font-size="8">Other bank</text><text x="55" y="44" fill="#9CA3AF" font-family="sans-serif" font-size="8">Attorney</text><text x="148" y="48" fill="#9CA3AF" font-family="sans-serif" font-size="8">Friction</text><text x="162" y="68" fill="#9CA3AF" font-family="sans-serif" font-size="8">Lost</text></g>
-<g class="abfin"><rect x="48" y="160" width="114" height="30" rx="6" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5"/><text x="105" y="174" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="9">70% of deposits leave</text><text x="105" y="186" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="9">the institution</text></g>
-<line x1="210" y1="10" x2="210" y2="220" stroke="rgba(156,163,175,.3)" stroke-width="1" stroke-dasharray="4 3"/>
-<text x="315" y="18" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="10">With Prismm</text>
-<rect x="265" y="28" width="100" height="40" rx="8" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="1"/><text x="315" y="53" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="11" font-weight="600">Bank</text>
-<rect x="248" y="78" width="134" height="24" rx="6" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.2)" stroke-width="0.5"/><text x="315" y="94" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="9">Prismm Anchor</text>
-<rect x="275" y="166" width="80" height="46" rx="8" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.25)" stroke-width="0.5"/><text x="315" y="188" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="10" font-weight="600">Vault</text><text x="315" y="202" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="9">retained</text>
-<g class="f1" style="transform-origin:315px 120px"><circle cx="315" cy="120" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="315" y="124" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="8">$</text></g>
-<g class="f2" style="transform-origin:303px 120px"><circle cx="303" cy="120" r="7" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="303" y="124" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="7">$</text></g>
-<g class="f3" style="transform-origin:327px 120px"><circle cx="327" cy="120" r="8" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="327" y="124" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="7">$</text></g>
-<rect x="238" y="204" width="154" height="24" rx="6" fill="rgba(15,110,86,.05)" stroke="rgba(15,110,86,.15)" stroke-width="0.5"/><text x="315" y="220" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="9">70% retention · structured · compliant</text>
-</svg></div>
-</div></div></div></section>
+<div class="feature-row__visual" style="padding:0">
+  <div class="carousel" id="car-ret">
+    <div class="carousel__track" id="car-ret-track">
 
-<!-- TRANSITION -->
+      <!-- Slide A: original 70% ring -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="150" r="110" fill="rgba(249,101,91,.04)" stroke="rgba(249,101,91,.12)" stroke-width="2"/>
+          <circle cx="200" cy="150" r="70" fill="rgba(249,101,91,.08)" stroke="rgba(249,101,91,.2)" stroke-width="2"/>
+          <text x="200" y="144" text-anchor="middle" fill="#F9655B" font-family="sans-serif" font-size="44" font-weight="700">70%</text>
+          <text x="200" y="176" text-anchor="middle" fill="#6B7280" font-family="sans-serif" font-size="16">Deposits retained with Prismm</text>
+        </svg>
+      </div>
+
+      <!-- Slide B: animated scatter vs flow -->
+      <div class="carousel__slide">
+        <svg width="100%" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <!-- Left: without -->
+          <text x="150" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">Without Prismm</text>
+          <rect x="75" y="38" width="150" height="52" rx="10" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/>
+          <text x="150" y="70" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
+          <text x="150" y="108" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12">life event occurs</text>
+          <!-- Scatter coins -->
+          <g class="s1" style="transform-origin:150px 140px"><circle cx="150" cy="140" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="150" y="145" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11">$</text></g>
+          <g class="s2" style="transform-origin:132px 144px"><circle cx="132" cy="144" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="132" y="148" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+          <g class="s3" style="transform-origin:168px 137px"><circle cx="168" cy="137" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="168" y="141" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+          <g class="s4" style="transform-origin:158px 155px"><circle cx="158" cy="155" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="158" y="159" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="9">$</text></g>
+          <g class="s5" style="transform-origin:140px 133px"><circle cx="140" cy="133" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="140" y="137" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+          <g class="abfin">
+            <text x="44" y="88" fill="#9CA3AF" font-family="sans-serif" font-size="11">Other bank</text>
+            <text x="72" y="56" fill="#9CA3AF" font-family="sans-serif" font-size="11">Attorney</text>
+            <text x="206" y="60" fill="#9CA3AF" font-family="sans-serif" font-size="11">Friction</text>
+            <text x="218" y="88" fill="#9CA3AF" font-family="sans-serif" font-size="11">Lost</text>
+          </g>
+          <g class="abfin">
+            <rect x="68" y="218" width="164" height="40" rx="8" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5"/>
+            <text x="150" y="235" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12">70% of deposits leave</text>
+            <text x="150" y="251" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12">the institution</text>
+          </g>
+          <!-- Divider -->
+          <line x1="300" y1="10" x2="300" y2="295" stroke="rgba(156,163,175,.3)" stroke-width="1" stroke-dasharray="5 4"/>
+          <!-- Right: with Prismm -->
+          <text x="450" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">With Prismm</text>
+          <rect x="375" y="38" width="150" height="52" rx="10" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/>
+          <text x="450" y="70" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
+          <rect x="352" y="104" width="196" height="30" rx="8" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.2)" stroke-width="0.5"/>
+          <text x="450" y="124" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="12">Prismm Anchor</text>
+          <!-- Vault -->
+          <rect x="390" y="224" width="120" height="60" rx="12" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.25)" stroke-width="0.5"/>
+          <text x="450" y="252" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="14" font-weight="600">Vault</text>
+          <text x="450" y="270" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="11">retained</text>
+          <!-- Flowing coins -->
+          <g class="f1" style="transform-origin:450px 158px"><circle cx="450" cy="158" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="450" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11">$</text></g>
+          <g class="f2" style="transform-origin:432px 158px"><circle cx="432" cy="158" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="432" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+          <g class="f3" style="transform-origin:468px 158px"><circle cx="468" cy="158" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="468" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+          <rect x="334" y="272" width="232" height="32" rx="8" fill="rgba(15,110,86,.05)" stroke="rgba(15,110,86,.15)" stroke-width="0.5"/>
+          <text x="450" y="292" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">70% retention · structured · compliant</text>
+        </svg>
+      </div>
+
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__btn" onclick="carMove('ret',-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel__dots" id="car-ret-dots">
+        <div class="carousel__dot active" onclick="carGo('ret',0)"></div>
+        <div class="carousel__dot" onclick="carGo('ret',1)"></div>
+      </div>
+      <button class="carousel__btn" onclick="carMove('ret',1)" aria-label="Next">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+</div></div></section>
+
+<!-- TRANSITION — old ab toggle (unchanged) -->
 <section class="section section--light" id="transition" aria-labelledby="trans-heading"><div class="container"><div class="feature-row feature-row--reverse reveal"><div><span class="label">Solution 02</span><h2 id="trans-heading">Account transition automation</h2><p class="text-lg">The average manual account transition takes 6 to 18 months of phone calls, paper forms, legal review, and compliance checks. Prismm replaces this with structured digital workflows.</p><p>From life event verification through final account transition, Prismm Anchor automates each step with compliance-ready audit trails. Your operations team handles in weeks what currently takes months.</p></div>
 <div class="feature-row__visual ab-wrap">
 <div class="ab-toggle"><button class="active" onclick="abSwitch('tr',0,this)">A</button><button onclick="abSwitch('tr',1,this)">B</button><span>toggle options</span></div>
@@ -109,7 +177,7 @@
 </svg></div>
 </div></div></div></section>
 
-<!-- GROWTH -->
+<!-- GROWTH — old ab toggle (unchanged) -->
 <section class="section" id="growth" aria-labelledby="grow-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--gold">Solution 03</span><h2 id="grow-heading">Intergenerational relationship capture</h2><p class="text-lg">When a customer dies, their beneficiaries are your next customers, if you can reach them. Today, most institutions lose these relationships entirely.</p><p>Prismm captures beneficiary and next-of-kin data at account origination, creating a direct pathway to the next generation. When a life event occurs, these connections are already established, turning account transitions into acquisition opportunities.</p></div>
 <div class="feature-row__visual ab-wrap">
 <div class="ab-toggle"><button class="active" onclick="abSwitch('gr',0,this)">A</button><button onclick="abSwitch('gr',1,this)">B</button><span>toggle options</span></div>
@@ -146,6 +214,24 @@
 <footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
 <script src="js/main.js?v=6"></script>
 <script>
+/* Carousel */
+var carState={};
+function carInit(id,count){carState[id]={idx:0,count:count}}
+function carRender(id){
+  var s=carState[id];
+  var slides=document.querySelectorAll('#car-'+id+' .carousel__slide');
+  slides.forEach(function(sl,i){sl.style.transform='translateX('+((-s.idx+i)*100)+'%)'});
+  document.querySelectorAll('#car-'+id+'-dots .carousel__dot').forEach(function(d,i){d.classList.toggle('active',i===s.idx)});
+}
+function carMove(id,dir){
+  var s=carState[id];
+  s.idx=(s.idx+dir+s.count)%s.count;
+  carRender(id);
+}
+function carGo(id,idx){carState[id].idx=idx;carRender(id)}
+carInit('ret',2);carRender('ret');
+
+/* AB toggle (transition + growth) */
 function abSwitch(prefix,idx,btn){
   var wrap=btn.closest('.ab-wrap');
   wrap.querySelectorAll('.ab-option').forEach(function(el,i){el.classList.toggle('active',i===idx)});
