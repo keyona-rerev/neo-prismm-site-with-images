@@ -1,19 +1,17 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Why Prismm — Not Just Storage. Infrastructure.</title><meta name="description" content="Prismm is not just storage, not estate planning software, and not a bolt-on. It is the infrastructure layer banks need. Deposit retention, account transition automation, and intergenerational growth."><meta name="robots" content="index, follow"><link rel="canonical" href="https://getprismm.com/why-prismm"><link rel="stylesheet" href="css/style.css?v=6"><link rel="icon" href="images/logo-light.svg" type="image/svg+xml">
 <style>
-/* ── Carousel ── */
 .carousel{position:relative;width:100%}
-.carousel__track{display:flex;width:100%;overflow:hidden}
-.carousel__slide{min-width:100%;width:100%;flex-shrink:0;transition:transform .35s ease}
+.carousel__track{position:relative;width:100%;overflow:hidden}
+.carousel__slide{display:none;width:100%}
+.carousel__slide.active{display:block}
 .carousel__slide svg{width:100%;height:auto;display:block}
 .carousel__controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
-.carousel__btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(102,88,234,.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;flex-shrink:0}
+.carousel__btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(102,88,234,.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
 .carousel__btn:hover{background:rgba(102,88,234,.06);border-color:rgba(102,88,234,.4)}
 .carousel__btn svg{width:14px;height:14px;stroke:#6658EA;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .carousel__dots{display:flex;gap:6px;align-items:center}
 .carousel__dot{width:6px;height:6px;border-radius:50%;background:rgba(102,88,234,.2);transition:background .2s,transform .2s;cursor:pointer}
 .carousel__dot.active{background:#6658EA;transform:scale(1.25)}
-
-/* ── Old ab styles still needed for transition/growth sections ── */
 .ab-wrap{position:relative}
 .ab-toggle{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .ab-toggle button{font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 14px;border-radius:20px;border:1.5px solid rgba(102,88,234,.25);background:transparent;color:#6658EA;cursor:pointer;transition:background .15s,color .15s}
@@ -21,17 +19,6 @@
 .ab-toggle span{font-size:11px;color:#9CA3AF}
 .ab-option{display:none}
 .ab-option.active{display:block}
-
-/* ── Animations ── */
-@keyframes scatter1{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(-90px,-55px);opacity:0}}
-@keyframes scatter2{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(-50px,-80px);opacity:0}}
-@keyframes scatter3{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(35px,-75px);opacity:0}}
-@keyframes scatter4{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(85px,-50px);opacity:0}}
-@keyframes scatter5{0%,15%{transform:translate(0,0);opacity:1}60%,100%{transform:translate(-15px,-90px);opacity:0}}
-@keyframes flow1{0%,10%{transform:translate(0,0);opacity:0}20%{opacity:1}70%,100%{transform:translate(0,62px);opacity:1}}
-@keyframes flow2{0%,20%{transform:translate(0,0);opacity:0}32%{opacity:1}80%,100%{transform:translate(0,52px);opacity:1}}
-@keyframes flow3{0%,30%{transform:translate(0,0);opacity:0}42%{opacity:1}90%,100%{transform:translate(0,58px);opacity:1}}
-@keyframes abfadein{0%,55%{opacity:0}75%,100%{opacity:1}}
 @keyframes stepIn{0%,100%{opacity:0;transform:translateY(6px)}15%,80%{opacity:1;transform:translateY(0)}}
 @keyframes lineGrow{0%,100%{stroke-dashoffset:60}20%,80%{stroke-dashoffset:0}}
 @keyframes checkPop{0%,100%{transform:scale(0);opacity:0}25%,75%{transform:scale(1);opacity:1}}
@@ -42,15 +29,6 @@
 @keyframes igeventFlash{0%,100%{opacity:0}45%,55%{opacity:1}}
 @keyframes iglabelFade{0%,35%,100%{opacity:0}55%,80%{opacity:1}}
 @media(prefers-reduced-motion:no-preference){
-.s1{animation:scatter1 3.5s ease-in-out infinite}
-.s2{animation:scatter2 3.5s ease-in-out infinite .15s}
-.s3{animation:scatter3 3.5s ease-in-out infinite .3s}
-.s4{animation:scatter4 3.5s ease-in-out infinite .05s}
-.s5{animation:scatter5 3.5s ease-in-out infinite .2s}
-.f1{animation:flow1 3.5s ease-in-out infinite}
-.f2{animation:flow2 3.5s ease-in-out infinite}
-.f3{animation:flow3 3.5s ease-in-out infinite}
-.abfin{animation:abfadein 3.5s ease-in-out infinite}
 .st1{animation:stepIn 4s ease-in-out infinite}
 .st2{animation:stepIn 4s ease-in-out infinite .4s}
 .st3{animation:stepIn 4s ease-in-out infinite .8s}
@@ -80,10 +58,10 @@
 <section class="section" id="retention" aria-labelledby="ret-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--coral">Solution 01</span><h2 id="ret-heading">Deposit retention at death</h2><p class="text-lg">When an account holder dies, deposits don't stay. They scatter to other institutions, to attorneys, to friction and delay. Prismm creates structured pathways that keep estate-linked assets at your institution.</p><p>By capturing beneficiary designations and estate readiness data at account origination, Prismm ensures that when a life event occurs, there's a clear, compliant path for assets to remain with your institution.</p></div>
 <div class="feature-row__visual" style="padding:0">
   <div class="carousel" id="car-ret">
-    <div class="carousel__track" id="car-ret-track">
+    <div class="carousel__track">
 
-      <!-- Slide A: original 70% ring -->
-      <div class="carousel__slide">
+      <!-- Slide A: 70% ring -->
+      <div class="carousel__slide active">
         <svg width="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="150" r="110" fill="rgba(249,101,91,.04)" stroke="rgba(249,101,91,.12)" stroke-width="2"/>
           <circle cx="200" cy="150" r="70" fill="rgba(249,101,91,.08)" stroke="rgba(249,101,91,.2)" stroke-width="2"/>
@@ -92,48 +70,131 @@
         </svg>
       </div>
 
-      <!-- Slide B: animated scatter vs flow -->
+      <!-- Slide B: animated scatter vs flow using SMIL animateTransform -->
       <div class="carousel__slide">
         <svg width="100%" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-          <!-- Left: without -->
+          <defs>
+            <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+
+          <!-- LEFT: Without Prismm -->
           <text x="150" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">Without Prismm</text>
           <rect x="75" y="38" width="150" height="52" rx="10" fill="rgba(31,41,55,.04)" stroke="rgba(31,41,55,.15)" stroke-width="1.5"/>
           <text x="150" y="70" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
           <text x="150" y="108" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="12">life event occurs</text>
-          <!-- Scatter coins -->
-          <g class="s1" style="transform-origin:150px 140px"><circle cx="150" cy="140" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="150" y="145" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11">$</text></g>
-          <g class="s2" style="transform-origin:132px 144px"><circle cx="132" cy="144" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="132" y="148" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
-          <g class="s3" style="transform-origin:168px 137px"><circle cx="168" cy="137" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="168" y="141" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
-          <g class="s4" style="transform-origin:158px 155px"><circle cx="158" cy="155" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="158" y="159" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="9">$</text></g>
-          <g class="s5" style="transform-origin:140px 133px"><circle cx="140" cy="133" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="140" y="137" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
-          <g class="abfin">
-            <text x="44" y="88" fill="#9CA3AF" font-family="sans-serif" font-size="11">Other bank</text>
-            <text x="72" y="56" fill="#9CA3AF" font-family="sans-serif" font-size="11">Attorney</text>
-            <text x="206" y="60" fill="#9CA3AF" font-family="sans-serif" font-size="11">Friction</text>
-            <text x="218" y="88" fill="#9CA3AF" font-family="sans-serif" font-size="11">Lost</text>
-          </g>
-          <g class="abfin">
-            <rect x="68" y="218" width="164" height="40" rx="8" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5"/>
-            <text x="150" y="235" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12">70% of deposits leave</text>
-            <text x="150" y="251" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12">the institution</text>
-          </g>
+
+          <!-- Coin 1: scatters up-left -->
+          <circle cx="150" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5">
+            <animateTransform attributeName="transform" type="translate" values="0,0; -85,-62; -85,-62; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <text x="150" y="153" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11">
+            <animateTransform attributeName="transform" type="translate" values="0,0; -85,-62; -85,-62; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            $
+          </text>
+
+          <!-- Coin 2: scatters up -->
+          <circle cx="138" cy="152" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5">
+            <animateTransform attributeName="transform" type="translate" values="0,0; -40,-88; -40,-88; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/>
+          </circle>
+          <text x="138" y="156" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">
+            <animateTransform attributeName="transform" type="translate" values="0,0; -40,-88; -40,-88; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.15s" repeatCount="indefinite"/>
+            $
+          </text>
+
+          <!-- Coin 3: scatters up-right -->
+          <circle cx="162" cy="145" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 38,-78; 38,-78; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>
+          </circle>
+          <text x="162" y="149" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 38,-78; 38,-78; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>
+            $
+          </text>
+
+          <!-- Coin 4: scatters right -->
+          <circle cx="156" cy="160" r="9" fill="#FAC775" stroke="#BA7517" stroke-width="0.5">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 88,-48; 88,-48; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/>
+          </circle>
+          <text x="156" y="164" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="9">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 88,-48; 88,-48; 0,0" keyTimes="0; 0.45; 0.85; 1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.15;0.5;0.85;1" dur="3.5s" begin="0.05s" repeatCount="indefinite"/>
+            $
+          </text>
+
+          <!-- Scatter destination labels (fade in after coins fly) -->
+          <text x="50" y="84" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            Other bank
+          </text>
+          <text x="88" y="52" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            Attorney
+          </text>
+          <text x="195" y="60" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            Friction
+          </text>
+          <text x="230" y="84" fill="#9CA3AF" font-family="sans-serif" font-size="11" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.6;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            Lost
+          </text>
+
+          <!-- 70% lost label -->
+          <rect x="68" y="218" width="164" height="40" rx="8" fill="rgba(163,45,45,.07)" stroke="rgba(163,45,45,.18)" stroke-width="0.5" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+          </rect>
+          <text x="150" y="235" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            70% of deposits leave
+          </text>
+          <text x="150" y="251" text-anchor="middle" fill="#A32D2D" font-family="sans-serif" font-size="12" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.65;0.85;1" dur="3.5s" repeatCount="indefinite"/>
+            the institution
+          </text>
+
           <!-- Divider -->
           <line x1="300" y1="10" x2="300" y2="295" stroke="rgba(156,163,175,.3)" stroke-width="1" stroke-dasharray="5 4"/>
-          <!-- Right: with Prismm -->
+
+          <!-- RIGHT: With Prismm -->
           <text x="450" y="24" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="13">With Prismm</text>
           <rect x="375" y="38" width="150" height="52" rx="10" fill="rgba(102,88,234,.06)" stroke="rgba(102,88,234,.25)" stroke-width="1.5"/>
           <text x="450" y="70" text-anchor="middle" fill="#6658EA" font-family="sans-serif" font-size="15" font-weight="600">Bank</text>
           <rect x="352" y="104" width="196" height="30" rx="8" fill="rgba(102,88,234,.04)" stroke="rgba(102,88,234,.2)" stroke-width="0.5"/>
           <text x="450" y="124" text-anchor="middle" fill="#534AB7" font-family="sans-serif" font-size="12">Prismm Anchor</text>
+
           <!-- Vault -->
           <rect x="390" y="224" width="120" height="60" rx="12" fill="rgba(15,110,86,.07)" stroke="rgba(15,110,86,.25)" stroke-width="0.5"/>
           <text x="450" y="252" text-anchor="middle" fill="#085041" font-family="sans-serif" font-size="14" font-weight="600">Vault</text>
           <text x="450" y="270" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="11">retained</text>
-          <!-- Flowing coins -->
-          <g class="f1" style="transform-origin:450px 158px"><circle cx="450" cy="158" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="450" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11">$</text></g>
-          <g class="f2" style="transform-origin:432px 158px"><circle cx="432" cy="158" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="432" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
-          <g class="f3" style="transform-origin:468px 158px"><circle cx="468" cy="158" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/><text x="468" y="162" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="10">$</text></g>
+
+          <!-- Flowing coins (drop down into vault) -->
+          <circle cx="450" cy="148" r="13" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,68; 0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <text x="450" y="153" text-anchor="middle" fill="#633806" font-family="sans-serif" font-size="11" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.7;0.85" dur="3.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,68; 0,68" keyTimes="0;0.1;0.75;1" dur="3.5s" repeatCount="indefinite"/>
+            $
+          </text>
+          <circle cx="432" cy="148" r="10" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.78;0.9" dur="3.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,62; 0,62" keyTimes="0;0.2;0.82;1" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="468" cy="148" r="11" fill="#FAC775" stroke="#BA7517" stroke-width="0.5" opacity="0">
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.3;0.85;0.95" dur="3.5s" repeatCount="indefinite"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,0; 0,70; 0,70" keyTimes="0;0.3;0.88;1" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Retained label -->
           <rect x="334" y="272" width="232" height="32" rx="8" fill="rgba(15,110,86,.05)" stroke="rgba(15,110,86,.15)" stroke-width="0.5"/>
           <text x="450" y="292" text-anchor="middle" fill="#0F6E56" font-family="sans-serif" font-size="12">70% retention · structured · compliant</text>
         </svg>
@@ -156,7 +217,7 @@
 </div>
 </div></div></section>
 
-<!-- TRANSITION — old ab toggle (unchanged) -->
+<!-- TRANSITION — unchanged -->
 <section class="section section--light" id="transition" aria-labelledby="trans-heading"><div class="container"><div class="feature-row feature-row--reverse reveal"><div><span class="label">Solution 02</span><h2 id="trans-heading">Account transition automation</h2><p class="text-lg">The average manual account transition takes 6 to 18 months of phone calls, paper forms, legal review, and compliance checks. Prismm replaces this with structured digital workflows.</p><p>From life event verification through final account transition, Prismm Anchor automates each step with compliance-ready audit trails. Your operations team handles in weeks what currently takes months.</p></div>
 <div class="feature-row__visual ab-wrap">
 <div class="ab-toggle"><button class="active" onclick="abSwitch('tr',0,this)">A</button><button onclick="abSwitch('tr',1,this)">B</button><span>toggle options</span></div>
@@ -177,7 +238,7 @@
 </svg></div>
 </div></div></div></section>
 
-<!-- GROWTH — old ab toggle (unchanged) -->
+<!-- GROWTH — unchanged -->
 <section class="section" id="growth" aria-labelledby="grow-heading"><div class="container"><div class="feature-row reveal"><div><span class="label label--gold">Solution 03</span><h2 id="grow-heading">Intergenerational relationship capture</h2><p class="text-lg">When a customer dies, their beneficiaries are your next customers, if you can reach them. Today, most institutions lose these relationships entirely.</p><p>Prismm captures beneficiary and next-of-kin data at account origination, creating a direct pathway to the next generation. When a life event occurs, these connections are already established, turning account transitions into acquisition opportunities.</p></div>
 <div class="feature-row__visual ab-wrap">
 <div class="ab-toggle"><button class="active" onclick="abSwitch('gr',0,this)">A</button><button onclick="abSwitch('gr',1,this)">B</button><span>toggle options</span></div>
@@ -211,27 +272,21 @@
 <section class="manifesto"><div class="container"><blockquote class="manifesto__quote reveal">Every bank has payments infrastructure. None have estate infrastructure. That gap is costing your institution millions in deposits you don't even know you're losing.</blockquote></div></section>
 <section class="cta-section"><div class="container"><h2>See the gap your institution is leaving open</h2><p>Schedule a strategic briefing to understand the estate attrition your institution is experiencing and how to stop it.</p><a href="contact.html" class="btn btn--coral">Schedule a strategic briefing</a></div></section>
 </main>
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div><div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div><div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="about.html">About</a></li></ul></nav></div><div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div></div><div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div></div></footer>
 <script src="js/main.js?v=6"></script>
 <script>
-/* Carousel */
 var carState={};
-function carInit(id,count){carState[id]={idx:0,count:count}}
-function carRender(id){
-  var s=carState[id];
-  var slides=document.querySelectorAll('#car-'+id+' .carousel__slide');
-  slides.forEach(function(sl,i){sl.style.transform='translateX('+((-s.idx+i)*100)+'%)'});
-  document.querySelectorAll('#car-'+id+'-dots .carousel__dot').forEach(function(d,i){d.classList.toggle('active',i===s.idx)});
+function carGo(id,idx){
+  var s=carState[id]||{idx:0};
+  s.idx=idx; carState[id]=s;
+  document.querySelectorAll('#car-'+id+' .carousel__slide').forEach(function(el,i){el.classList.toggle('active',i===idx)});
+  document.querySelectorAll('#car-'+id+'-dots .carousel__dot').forEach(function(d,i){d.classList.toggle('active',i===idx)});
 }
 function carMove(id,dir){
-  var s=carState[id];
-  s.idx=(s.idx+dir+s.count)%s.count;
-  carRender(id);
+  var count=document.querySelectorAll('#car-'+id+' .carousel__slide').length;
+  var s=carState[id]||{idx:0};
+  carGo(id,(s.idx+dir+count)%count);
 }
-function carGo(id,idx){carState[id].idx=idx;carRender(id)}
-carInit('ret',2);carRender('ret');
-
-/* AB toggle (transition + growth) */
 function abSwitch(prefix,idx,btn){
   var wrap=btn.closest('.ab-wrap');
   wrap.querySelectorAll('.ab-option').forEach(function(el,i){el.classList.toggle('active',i===idx)});
