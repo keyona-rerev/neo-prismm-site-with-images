@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/style.css?v=6">
   <link rel="icon" href="images/logo-light.svg" type="image/svg+xml">
   <style>
-    /* ── Filter bar ── */
     .filter-bar {
       display: flex;
       align-items: center;
@@ -36,24 +35,14 @@
       cursor: pointer;
       transition: all .2s ease;
     }
-    .filter-btn:hover {
-      border-color: var(--purple);
-      color: var(--purple);
-    }
-    .filter-btn.active {
-      background: var(--navy);
-      border-color: var(--navy);
-      color: var(--white);
-    }
+    .filter-btn:hover { border-color: var(--purple); color: var(--purple); }
+    .filter-btn.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
-    /* ── News grid ── */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
-
-    /* ── News card ── */
     .news-card {
       background: var(--white);
       border: 1px solid var(--border-light);
@@ -71,80 +60,23 @@
       box-shadow: 0 8px 28px rgba(0,0,0,.07);
       transform: translateY(-3px);
     }
-    .news-card__meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .news-card__outlet {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted-text);
-    }
-    .news-card__dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-    .news-card__date {
-      font-size: .78rem;
-      color: var(--muted-text);
-    }
-    .news-card__tag {
-      margin-left: auto;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
+    .news-card__meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .news-card__outlet { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-text); }
+    .news-card__dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+    .news-card__date { font-size: .78rem; color: var(--muted-text); }
+    .news-card__tag { margin-left: auto; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
     .tag--article  { background: rgba(102,88,234,.08); color: var(--purple); }
     .tag--podcast  { background: rgba(249,101,91,.08); color: var(--coral); }
     .tag--award    { background: rgba(245,192,112,.15); color: var(--gold-dark); }
     .tag--funding  { background: rgba(16,185,129,.08); color: #059669; }
     .tag--press    { background: rgba(31,41,55,.06); color: var(--navy); }
+    .news-card__title { font-size: 1.05rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin: 0; }
+    .news-card__body { font-size: .9rem; color: var(--muted-text); line-height: 1.6; flex: 1; margin: 0; }
+    .news-card__link { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 700; color: var(--purple); margin-top: auto; transition: gap .2s; }
+    .news-card:hover .news-card__link { gap: 10px; }
+    .news-card__link svg { flex-shrink: 0; transition: transform .2s; }
+    .news-card:hover .news-card__link svg { transform: translateX(3px); }
 
-    .news-card__title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.35;
-      margin: 0;
-    }
-    .news-card__body {
-      font-size: .9rem;
-      color: var(--muted-text);
-      line-height: 1.6;
-      flex: 1;
-      margin: 0;
-    }
-    .news-card__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--purple);
-      margin-top: auto;
-      transition: gap .2s;
-    }
-    .news-card:hover .news-card__link {
-      gap: 10px;
-    }
-    .news-card__link svg {
-      flex-shrink: 0;
-      transition: transform .2s;
-    }
-    .news-card:hover .news-card__link svg {
-      transform: translateX(3px);
-    }
-
-    /* ── Featured (first card, spans 2 cols) ── */
     .news-card--featured {
       grid-column: span 2;
       flex-direction: row;
@@ -154,61 +86,21 @@
       background: var(--navy);
       border-color: transparent;
     }
-    .news-card--featured:hover {
-      background: var(--navy-light);
-    }
+    .news-card--featured:hover { background: var(--navy-light); }
     .news-card--featured .news-card__outlet,
     .news-card--featured .news-card__date,
-    .news-card--featured .news-card__dot {
-      color: rgba(255,255,255,.4);
-    }
-    .news-card--featured .news-card__title {
-      color: var(--white);
-      font-size: 1.3rem;
-    }
-    .news-card--featured .news-card__body {
-      color: rgba(255,255,255,.6);
-    }
-    .news-card--featured .news-card__link {
-      color: var(--gold);
-    }
-    .news-card--featured .tag--press {
-      background: rgba(255,255,255,.1);
-      color: rgba(255,255,255,.7);
-    }
-    .news-card--featured .tag--funding {
-      background: rgba(16,185,129,.15);
-      color: #6ee7b7;
-    }
-    .featured__content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .featured__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-    .featured__badge::before {
-      content: '';
-      width: 24px;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 1px;
-    }
+    .news-card--featured .news-card__dot { color: rgba(255,255,255,.4); }
+    .news-card--featured .news-card__title { color: var(--white); font-size: 1.3rem; }
+    .news-card--featured .news-card__body { color: rgba(255,255,255,.6); }
+    .news-card--featured .news-card__link { color: var(--gold); }
+    .news-card--featured .tag--press { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+    .featured__content { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+    .featured__badge { display: inline-flex; align-items: center; gap: 7px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .featured__badge::before { content: ''; width: 24px; height: 2px; background: var(--gold); border-radius: 1px; }
 
-    /* ── Stats bar ── */
     .press-stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border-light);
       border: 1px solid var(--border-light);
@@ -216,37 +108,24 @@
       overflow: hidden;
       margin-bottom: 56px;
     }
-    .press-stat {
-      background: var(--white);
-      padding: 24px;
-      text-align: center;
-    }
-    .press-stat__num {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--navy);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .press-stat__label {
-      font-size: .82rem;
-      color: var(--muted-text);
-    }
+    .press-stat { background: var(--white); padding: 24px; text-align: center; }
+    .press-stat__num { font-size: 2rem; font-weight: 900; color: var(--navy); display: block; margin-bottom: 4px; }
+    .press-stat__label { font-size: .82rem; color: var(--muted-text); }
 
-    /* ── Hidden cards (for filter) ── */
     .news-card[hidden] { display: none; }
 
     @media(max-width: 1024px) {
       .news-grid { grid-template-columns: repeat(2, 1fr); }
       .news-card--featured { grid-column: span 2; flex-direction: column; }
+      .press-stats { grid-template-columns: repeat(3, 1fr); }
     }
     @media(max-width: 768px) {
       .news-grid { grid-template-columns: 1fr; }
       .news-card--featured { grid-column: span 1; }
-      .press-stats { grid-template-columns: repeat(2, 1fr); }
+      .press-stats { grid-template-columns: 1fr 1fr 1fr; }
     }
     @media(max-width: 480px) {
-      .press-stats { grid-template-columns: 1fr 1fr; }
+      .press-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -281,7 +160,6 @@
     <section class="section" aria-label="Press coverage">
       <div class="container">
 
-        <!-- Stats bar -->
         <div class="press-stats reveal" role="list" aria-label="Press statistics">
           <div class="press-stat" role="listitem">
             <span class="press-stat__num">15+</span>
@@ -292,16 +170,11 @@
             <span class="press-stat__label">Federal &amp; state funding won</span>
           </div>
           <div class="press-stat" role="listitem">
-            <span class="press-stat__num">250+</span>
-            <span class="press-stat__label">Press release syndications</span>
-          </div>
-          <div class="press-stat" role="listitem">
             <span class="press-stat__num">2020</span>
             <span class="press-stat__label">Founded in Birmingham, AL</span>
           </div>
         </div>
 
-        <!-- Filter bar -->
         <div class="filter-bar reveal reveal-delay-1" role="group" aria-label="Filter press coverage">
           <button class="filter-btn active" data-filter="all">All coverage</button>
           <button class="filter-btn" data-filter="article">Articles</button>
@@ -310,10 +183,8 @@
           <button class="filter-btn" data-filter="press">Press Releases</button>
         </div>
 
-        <!-- News grid -->
         <div class="news-grid reveal reveal-delay-1" id="news-grid" role="feed" aria-label="Press coverage">
 
-          <!-- FEATURED: William Mills Agency PR — most recent, most strategic -->
           <a class="news-card news-card--featured" href="https://www.businesswire.com/news/home/20260409183850/en/" target="_blank" rel="noopener" data-type="press" aria-label="Read: Prismm retains William Mills Agency — Business Wire">
             <div class="featured__content">
               <span class="featured__badge">Latest news</span>
@@ -324,12 +195,11 @@
                 <span class="news-card__tag tag--press">Press release</span>
               </div>
               <h2 class="news-card__title">Prismm Retains William Mills Agency for Public Relations Services</h2>
-              <p class="news-card__body">Prismm selects the nation's leading fintech PR firm to support market expansion as it positions itself as inheritance infrastructure for banks and credit unions — syndicated to 250+ outlets.</p>
+              <p class="news-card__body">Prismm selects the nation's leading fintech PR firm to support market expansion as it positions itself as inheritance infrastructure for banks and credit unions.</p>
               <span class="news-card__link">Read the release <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
           </a>
 
-          <!-- Finopotamus Women in Tech -->
           <a class="news-card" href="https://www.finopotamus.com/post/women-in-technology-prismm-s-martha-underwood" target="_blank" rel="noopener" data-type="article" aria-label="Read: Women in Technology — Finopotamus">
             <div class="news-card__meta">
               <span class="news-card__outlet">Finopotamus</span>
@@ -342,7 +212,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Technical.ly Delaware -->
           <a class="news-card" href="https://technical.ly/entrepreneurship/why-founders-choose-delaware-over-bigger-startup-hubs/" target="_blank" rel="noopener" data-type="article" aria-label="Read: Why Founders Are Choosing Delaware — Technical.ly">
             <div class="news-card__meta">
               <span class="news-card__outlet">Technical.ly</span>
@@ -355,7 +224,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- MAX Transit Women Who Move Birmingham -->
           <a class="news-card" href="https://nationaltoday.com/us/al/birmingham/news/2026/03/12/prismm-ceo-martha-underwood-honored-on-max-transit-women-who-move-birmingham-tribute-bus/" target="_blank" rel="noopener" data-type="award" aria-label="Read: Women Who Move Birmingham — Today in Birmingham">
             <div class="news-card__meta">
               <span class="news-card__outlet">Today in Birmingham</span>
@@ -368,7 +236,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Bank Slate Convos -->
           <a class="news-card" href="https://thebankslate.substack.com/p/bank-slate-convos-martha-underwood" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: Bank Slate Convos — The Bank Slate">
             <div class="news-card__meta">
               <span class="news-card__outlet">Bank Slate Convos</span>
@@ -381,7 +248,6 @@
             <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- AfroTech / Federal Funding -->
           <a class="news-card" href="https://finance.yahoo.com/news/prismm-digital-inheritance-vault-awarded-180910269.html" target="_blank" rel="noopener" data-type="funding" aria-label="Read: $1M Federal Funding — AfroTech">
             <div class="news-card__meta">
               <span class="news-card__outlet">AfroTech</span>
@@ -394,7 +260,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Delaware EDGE Win -->
           <a class="news-card" href="https://news.delaware.gov/2025/11/12/governor-meyer-and-dsb-announce-edge-2-0-winners/" target="_blank" rel="noopener" data-type="funding" aria-label="Read: Delaware EDGE 2.0 Winner — State of Delaware">
             <div class="news-card__meta">
               <span class="news-card__outlet">State of Delaware</span>
@@ -407,7 +272,6 @@
             <span class="news-card__link">Read announcement <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- WealthStack Podcast -->
           <a class="news-card" href="https://www.wealthmanagement.com/financial-technology/the-wealthstack-podcast-how-digital-vaults-empower-advisors-and-families-with-martha-underwood" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: WealthStack Podcast — WealthManagement.com">
             <div class="news-card__meta">
               <span class="news-card__outlet">WealthManagement.com</span>
@@ -420,7 +284,6 @@
             <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Innovation Depot Mile-a-Minute -->
           <a class="news-card" href="https://innovationdepot.org/mile-a-minute-prism-digital-vault/" target="_blank" rel="noopener" data-type="article" aria-label="Watch: Meet the Founders Behind Prismm — Innovation Depot">
             <div class="news-card__meta">
               <span class="news-card__outlet">Innovation Depot</span>
@@ -433,7 +296,6 @@
             <span class="news-card__link">Watch feature <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Delaware Business Times / CAFE -->
           <a class="news-card" href="https://delawarebusinesstimes.com/news/cafe-accelerator-fintech/" target="_blank" rel="noopener" data-type="article" aria-label="Read: CAFE Accelerator — Delaware Business Times">
             <div class="news-card__meta">
               <span class="news-card__outlet">Delaware Business Times</span>
@@ -446,7 +308,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Disruption Blueprint Ep. 59 -->
           <a class="news-card" href="https://disruption-blueprint-podcast.blubrry.net/2025/02/03/from-corporate-tech-to-fintech-trailblazer-martha-underwood-and-prismm-ep-59/" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: Disruption Blueprint Podcast Ep. 59">
             <div class="news-card__meta">
               <span class="news-card__outlet">Disruption Blueprint Podcast</span>
@@ -459,7 +320,6 @@
             <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Beck on Tech / 7Q -->
           <a class="news-card" href="https://beckontech.substack.com/p/7q-in-the-spotlight-martha-underwood" target="_blank" rel="noopener" data-type="article" aria-label="Read: 7Q in the Spotlight — Beck on Tech">
             <div class="news-card__meta">
               <span class="news-card__outlet">Beck on Tech</span>
@@ -472,7 +332,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Canvas Rebel -->
           <a class="news-card" href="#" target="_blank" rel="noopener" data-type="article" aria-label="Read: Meet Martha Underwood — Canvas Rebel">
             <div class="news-card__meta">
               <span class="news-card__outlet">Canvas Rebel</span>
@@ -485,7 +344,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Bold Journey -->
           <a class="news-card" href="https://boldjourney.com/meet-martha-underwood/" target="_blank" rel="noopener" data-type="article" aria-label="Read: Meet Martha Underwood — Bold Journey">
             <div class="news-card__meta">
               <span class="news-card__outlet">Bold Journey</span>
@@ -498,7 +356,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Malik Yoba / BlackNews.com -->
           <a class="news-card" href="#" target="_blank" rel="noopener" data-type="press" aria-label="Read: Malik Yoba Partners with Prismm — BlackNews.com">
             <div class="news-card__meta">
               <span class="news-card__outlet">BlackNews.com</span>
@@ -511,7 +368,6 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-          <!-- Business Alabama -->
           <a class="news-card" href="https://businessalabama.com/prismm-offers-a-solution-for-a-modern-day-dilemma/" target="_blank" rel="noopener" data-type="article" aria-label="Read: PRISMM Offers a Solution for a Modern-Day Dilemma — Business Alabama">
             <div class="news-card__meta">
               <span class="news-card__outlet">Business Alabama</span>
@@ -524,11 +380,10 @@
             <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
 
-        </div><!-- /news-grid -->
+        </div>
       </div>
     </section>
 
-    <!-- Press inquiry CTA -->
     <section class="cta-section">
       <div class="container">
         <h2>Press inquiries</h2>
@@ -542,7 +397,7 @@
     <div class="footer__grid">
       <div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div>
       <div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div>
-      <div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
+      <div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li><li><a href="news.html">In the News</a></li></ul></nav></div>
       <div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div>
     </div>
     <div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div>
@@ -550,19 +405,13 @@
 
   <script src="js/main.js?v=6"></script>
   <script>
-    // Filter functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.news-card');
-
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
-
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        // Show/hide cards
         cards.forEach(card => {
           const type = card.dataset.type;
           if (filter === 'all' || type === filter) {
@@ -571,8 +420,6 @@
             card.setAttribute('hidden', '');
           }
         });
-
-        // Featured card spans 2 cols only if visible and not filtered
         const featured = document.querySelector('.news-card--featured');
         if (featured && !featured.hasAttribute('hidden')) {
           featured.style.gridColumn = '';
