@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In the News — Prismm Press Coverage & Media</title>
+  <meta name="description" content="Prismm press coverage, media features, podcast appearances, and news. Follow Prismm's journey as the leading estate orchestration infrastructure platform for banks and credit unions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://getprismm.com/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="In the News — Prismm Press Coverage & Media">
+  <meta property="og:description" content="Prismm press coverage, media features, podcast appearances, and news.">
+  <meta property="og:url" content="https://getprismm.com/news.html">
+  <meta property="og:site_name" content="Prismm">
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="icon" href="images/logo-light.svg" type="image/svg+xml">
+  <style>
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      font-family: var(--font-primary);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border);
+      color: var(--muted-text);
+      background: var(--white);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .filter-btn:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+    }
+    .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* ── News grid ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* ── News card ── */
+    .news-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all .25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .news-card:hover {
+      border-color: var(--border);
+      box-shadow: 0 8px 28px rgba(0,0,0,.07);
+      transform: translateY(-3px);
+    }
+    .news-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .news-card__outlet {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted-text);
+    }
+    .news-card__dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .news-card__date {
+      font-size: .78rem;
+      color: var(--muted-text);
+    }
+    .news-card__tag {
+      margin-left: auto;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .tag--article  { background: rgba(102,88,234,.08); color: var(--purple); }
+    .tag--podcast  { background: rgba(249,101,91,.08); color: var(--coral); }
+    .tag--award    { background: rgba(245,192,112,.15); color: var(--gold-dark); }
+    .tag--funding  { background: rgba(16,185,129,.08); color: #059669; }
+    .tag--press    { background: rgba(31,41,55,.06); color: var(--navy); }
+
+    .news-card__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+      margin: 0;
+    }
+    .news-card__body {
+      font-size: .9rem;
+      color: var(--muted-text);
+      line-height: 1.6;
+      flex: 1;
+      margin: 0;
+    }
+    .news-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-top: auto;
+      transition: gap .2s;
+    }
+    .news-card:hover .news-card__link {
+      gap: 10px;
+    }
+    .news-card__link svg {
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    .news-card:hover .news-card__link svg {
+      transform: translateX(3px);
+    }
+
+    /* ── Featured (first card, spans 2 cols) ── */
+    .news-card--featured {
+      grid-column: span 2;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 32px;
+      background: var(--navy);
+      border-color: transparent;
+    }
+    .news-card--featured:hover {
+      background: var(--navy-light);
+    }
+    .news-card--featured .news-card__outlet,
+    .news-card--featured .news-card__date,
+    .news-card--featured .news-card__dot {
+      color: rgba(255,255,255,.4);
+    }
+    .news-card--featured .news-card__title {
+      color: var(--white);
+      font-size: 1.3rem;
+    }
+    .news-card--featured .news-card__body {
+      color: rgba(255,255,255,.6);
+    }
+    .news-card--featured .news-card__link {
+      color: var(--gold);
+    }
+    .news-card--featured .tag--press {
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.7);
+    }
+    .news-card--featured .tag--funding {
+      background: rgba(16,185,129,.15);
+      color: #6ee7b7;
+    }
+    .featured__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .featured__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .featured__badge::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 1px;
+    }
+
+    /* ── Stats bar ── */
+    .press-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-light);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 56px;
+    }
+    .press-stat {
+      background: var(--white);
+      padding: 24px;
+      text-align: center;
+    }
+    .press-stat__num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .press-stat__label {
+      font-size: .82rem;
+      color: var(--muted-text);
+    }
+
+    /* ── Hidden cards (for filter) ── */
+    .news-card[hidden] { display: none; }
+
+    @media(max-width: 1024px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+      .news-card--featured { grid-column: span 2; flex-direction: column; }
+    }
+    @media(max-width: 768px) {
+      .news-grid { grid-template-columns: 1fr; }
+      .news-card--featured { grid-column: span 1; }
+      .press-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 480px) {
+      .press-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="accent-bar" role="presentation"></div>
+  <nav class="nav" role="navigation" aria-label="Main navigation"><div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Prismm homepage"><img src="images/logo-light.svg" alt="Prismm" width="200" height="75"></a>
+    <ul class="nav__links" role="menubar">
+      <li role="none"><a href="platform.html" role="menuitem">Platform</a></li>
+      <li role="none"><a href="why-prismm.html" role="menuitem">Why Prismm</a></li>
+      <li role="none"><a href="partners.html" role="menuitem">Partners</a></li>
+      <li role="none"><a href="resources.html" role="menuitem">Resources</a></li>
+      <li role="none"><a href="about.html" role="menuitem">About</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="https://app.getprismm.com/session/new" class="nav__login">Log In</a>
+      <a href="contact.html" class="nav__cta">Schedule Briefing</a>
+    </div>
+    <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div></nav>
+
+  <main id="main">
+    <header class="page-header">
+      <div class="container">
+        <span class="label">Press &amp; Media</span>
+        <h1>Prismm in the News</h1>
+        <p>Media coverage, podcast appearances, awards, and press releases tracking Prismm's journey as the infrastructure layer banks have been missing.</p>
+      </div>
+    </header>
+
+    <section class="section" aria-label="Press coverage">
+      <div class="container">
+
+        <!-- Stats bar -->
+        <div class="press-stats reveal" role="list" aria-label="Press statistics">
+          <div class="press-stat" role="listitem">
+            <span class="press-stat__num">15+</span>
+            <span class="press-stat__label">Media features</span>
+          </div>
+          <div class="press-stat" role="listitem">
+            <span class="press-stat__num">$1.125M</span>
+            <span class="press-stat__label">Federal &amp; state funding won</span>
+          </div>
+          <div class="press-stat" role="listitem">
+            <span class="press-stat__num">250+</span>
+            <span class="press-stat__label">Press release syndications</span>
+          </div>
+          <div class="press-stat" role="listitem">
+            <span class="press-stat__num">2020</span>
+            <span class="press-stat__label">Founded in Birmingham, AL</span>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-bar reveal reveal-delay-1" role="group" aria-label="Filter press coverage">
+          <button class="filter-btn active" data-filter="all">All coverage</button>
+          <button class="filter-btn" data-filter="article">Articles</button>
+          <button class="filter-btn" data-filter="podcast">Podcasts</button>
+          <button class="filter-btn" data-filter="funding">Funding &amp; Awards</button>
+          <button class="filter-btn" data-filter="press">Press Releases</button>
+        </div>
+
+        <!-- News grid -->
+        <div class="news-grid reveal reveal-delay-1" id="news-grid" role="feed" aria-label="Press coverage">
+
+          <!-- FEATURED: William Mills Agency PR — most recent, most strategic -->
+          <a class="news-card news-card--featured" href="https://www.businesswire.com/news/home/20260409183850/en/" target="_blank" rel="noopener" data-type="press" aria-label="Read: Prismm retains William Mills Agency — Business Wire">
+            <div class="featured__content">
+              <span class="featured__badge">Latest news</span>
+              <div class="news-card__meta">
+                <span class="news-card__outlet">Business Wire</span>
+                <span class="news-card__dot" aria-hidden="true"></span>
+                <span class="news-card__date">April 2026</span>
+                <span class="news-card__tag tag--press">Press release</span>
+              </div>
+              <h2 class="news-card__title">Prismm Retains William Mills Agency for Public Relations Services</h2>
+              <p class="news-card__body">Prismm selects the nation's leading fintech PR firm to support market expansion as it positions itself as inheritance infrastructure for banks and credit unions — syndicated to 250+ outlets.</p>
+              <span class="news-card__link">Read the release <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <!-- Finopotamus Women in Tech -->
+          <a class="news-card" href="https://www.finopotamus.com/post/women-in-technology-prismm-s-martha-underwood" target="_blank" rel="noopener" data-type="article" aria-label="Read: Women in Technology — Finopotamus">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Finopotamus</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">April 2026</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">Women in Technology: Prismm's Martha Underwood</h2>
+            <p class="news-card__body">Martha's career arc from IBM in 1997 to founding Prismm — and how Prismm is shifting credit unions from reactive post-death engagement to proactive multigenerational relationship building.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Technical.ly Delaware -->
+          <a class="news-card" href="https://technical.ly/entrepreneurship/why-founders-choose-delaware-over-bigger-startup-hubs/" target="_blank" rel="noopener" data-type="article" aria-label="Read: Why Founders Are Choosing Delaware — Technical.ly">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Technical.ly</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">March 2026</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">Why Founders Are Choosing Delaware Over Bigger Startup Hubs</h2>
+            <p class="news-card__body">Prismm featured as a case study in Delaware's emerging fintech ecosystem — $1M SSBCI + $125K EDGE funding cited as the catalyst for relocating headquarters from Birmingham.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- MAX Transit Women Who Move Birmingham -->
+          <a class="news-card" href="https://nationaltoday.com/us/al/birmingham/news/2026/03/12/prismm-ceo-martha-underwood-honored-on-max-transit-women-who-move-birmingham-tribute-bus/" target="_blank" rel="noopener" data-type="award" aria-label="Read: Women Who Move Birmingham — Today in Birmingham">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Today in Birmingham</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">March 2026</span>
+              <span class="news-card__tag tag--award">Award</span>
+            </div>
+            <h2 class="news-card__title">Prismm CEO Martha Underwood Honored on MAX Transit "Women Who Move Birmingham" Tribute Bus</h2>
+            <p class="news-card__body">Martha and COO Shella Sylla are among seven women honored on Birmingham's 2026 tribute bus for their contributions to technology, innovation, and community development across Jefferson County.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Bank Slate Convos -->
+          <a class="news-card" href="https://thebankslate.substack.com/p/bank-slate-convos-martha-underwood" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: Bank Slate Convos — The Bank Slate">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Bank Slate Convos</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">March 2026</span>
+              <span class="news-card__tag tag--podcast">Podcast</span>
+            </div>
+            <h2 class="news-card__title">Bank Slate Convos: Martha Underwood on Digital Vaults and Multigenerational Relationships</h2>
+            <p class="news-card__body">Martha explains how secure digital vaults help banks strengthen multigenerational client relationships and retain deposits that would otherwise walk out the door at a death event.</p>
+            <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- AfroTech / Federal Funding -->
+          <a class="news-card" href="https://finance.yahoo.com/news/prismm-digital-inheritance-vault-awarded-180910269.html" target="_blank" rel="noopener" data-type="funding" aria-label="Read: $1M Federal Funding — AfroTech">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">AfroTech</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">November 2025</span>
+              <span class="news-card__tag tag--funding">Funding</span>
+            </div>
+            <h2 class="news-card__title">Prismm Awarded $1M in Federal Funding as Baby Boomers Prepare to Transfer $84T to Heirs</h2>
+            <p class="news-card__body">AfroTech covers Black-woman-owned Prismm's $1M SSBCI award and Delaware relocation, including its active contract with a Mississippi-based $25B-asset bank.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Delaware EDGE Win -->
+          <a class="news-card" href="https://news.delaware.gov/2025/11/12/governor-meyer-and-dsb-announce-edge-2-0-winners/" target="_blank" rel="noopener" data-type="funding" aria-label="Read: Delaware EDGE 2.0 Winner — State of Delaware">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">State of Delaware</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">November 2025</span>
+              <span class="news-card__tag tag--funding">Funding</span>
+            </div>
+            <h2 class="news-card__title">Governor Meyer Announces EDGE 2.0 Winners — Prismm Wins $1M SSBCI + $125K Grant</h2>
+            <p class="news-card__body">Prismm takes the top prize in Delaware's EDGE 2.0 competition — the only company to win both the $125K STEM grant and the $1M SSBCI federal investment in a special bonus round.</p>
+            <span class="news-card__link">Read announcement <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- WealthStack Podcast -->
+          <a class="news-card" href="https://www.wealthmanagement.com/financial-technology/the-wealthstack-podcast-how-digital-vaults-empower-advisors-and-families-with-martha-underwood" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: WealthStack Podcast — WealthManagement.com">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">WealthManagement.com</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">December 2024</span>
+              <span class="news-card__tag tag--podcast">Podcast</span>
+            </div>
+            <h2 class="news-card__title">The WealthStack Podcast: How Digital Vaults Empower Advisors and Families</h2>
+            <p class="news-card__body">Host Shannon Rosic and Martha discuss customer data ownership, AI-assisted document management, and how evolving data regulations are shaping the digital vault category for wealth managers.</p>
+            <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Innovation Depot Mile-a-Minute -->
+          <a class="news-card" href="https://innovationdepot.org/mile-a-minute-prism-digital-vault/" target="_blank" rel="noopener" data-type="article" aria-label="Watch: Meet the Founders Behind Prismm — Innovation Depot">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Innovation Depot</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">June 2025</span>
+              <span class="news-card__tag tag--article">Video feature</span>
+            </div>
+            <h2 class="news-card__title">Meet the Founders Behind Prismm: Building the Vault for Generational Wealth</h2>
+            <p class="news-card__body">Martha and Shella walk and talk with Innovation Depot, sharing Prismm's origin story and the vision: "The vault built for the next generation, powered by the wealth of the last generation."</p>
+            <span class="news-card__link">Watch feature <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Delaware Business Times / CAFE -->
+          <a class="news-card" href="https://delawarebusinesstimes.com/news/cafe-accelerator-fintech/" target="_blank" rel="noopener" data-type="article" aria-label="Read: CAFE Accelerator — Delaware Business Times">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Delaware Business Times</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">July 2025</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">Two Years In, CAFE Accelerator Grows Future Fintech Companies in Delaware</h2>
+            <p class="news-card__body">Prismm featured as a standout from the CAFE Demo Day cohort. Martha discusses the strategic case for Delaware: trust companies, proximity to D.C., and the banking ecosystem that matches Prismm's ICP.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Disruption Blueprint Ep. 59 -->
+          <a class="news-card" href="https://disruption-blueprint-podcast.blubrry.net/2025/02/03/from-corporate-tech-to-fintech-trailblazer-martha-underwood-and-prismm-ep-59/" target="_blank" rel="noopener" data-type="podcast" aria-label="Listen: Disruption Blueprint Podcast Ep. 59">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Disruption Blueprint Podcast</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">February 2025</span>
+              <span class="news-card__tag tag--podcast">Podcast</span>
+            </div>
+            <h2 class="news-card__title">From Corporate Tech to Fintech Trailblazer: Martha Underwood and Prismm (Ep. 59)</h2>
+            <p class="news-card__body">Martha discusses bridging generational wealth gaps, AI's role in financial services, and transforming the often-overwhelming process of legacy planning into the ultimate act of love.</p>
+            <span class="news-card__link">Listen now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Beck on Tech / 7Q -->
+          <a class="news-card" href="https://beckontech.substack.com/p/7q-in-the-spotlight-martha-underwood" target="_blank" rel="noopener" data-type="article" aria-label="Read: 7Q in the Spotlight — Beck on Tech">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Beck on Tech</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">January 2025</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">7Q in the Spotlight: Martha Underwood of Prismm — "The Zelle of Wealth Transfer"</h2>
+            <p class="news-card__body">Martha frames Prismm's vision: the way Zelle transformed payments, Prismm will redefine how wealth transfers between generations — automatically, seamlessly, and through the bank.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Canvas Rebel -->
+          <a class="news-card" href="#" target="_blank" rel="noopener" data-type="article" aria-label="Read: Meet Martha Underwood — Canvas Rebel">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Canvas Rebel</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">July 2024</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">Meet Martha Underwood: Founder of Prismm</h2>
+            <p class="news-card__body">Canvas Rebel profiles Martha's path from corporate tech to fintech founder, and Prismm's specialized focus on seamless intergenerational wealth transfer and reputation-building in the market.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Bold Journey -->
+          <a class="news-card" href="https://boldjourney.com/meet-martha-underwood/" target="_blank" rel="noopener" data-type="article" aria-label="Read: Meet Martha Underwood — Bold Journey">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Bold Journey</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">February 2024</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">Meet Martha Underwood: On Resilience, Risk, and Building Prismm</h2>
+            <p class="news-card__body">Martha traces her resilience to her father's journey from Haiti to the Bahamas to Miami — and shares how Prismm blends technology with the human touch to bring peace of mind to families.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Malik Yoba / BlackNews.com -->
+          <a class="news-card" href="#" target="_blank" rel="noopener" data-type="press" aria-label="Read: Malik Yoba Partners with Prismm — BlackNews.com">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">BlackNews.com</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">February 2023</span>
+              <span class="news-card__tag tag--press">Press release</span>
+            </div>
+            <h2 class="news-card__title">Dr. Malik Yoba Partners with Black-Owned Prismm to Promote End-of-Life Preparedness</h2>
+            <p class="news-card__body">Award-winning actor and philanthropist Dr. Malik Yoba joins Prismm as a partner, citing his personal experience navigating his mother's dementia and the absence of a solution like Prismm during that time.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Business Alabama -->
+          <a class="news-card" href="https://businessalabama.com/prismm-offers-a-solution-for-a-modern-day-dilemma/" target="_blank" rel="noopener" data-type="article" aria-label="Read: PRISMM Offers a Solution for a Modern-Day Dilemma — Business Alabama">
+            <div class="news-card__meta">
+              <span class="news-card__outlet">Business Alabama</span>
+              <span class="news-card__dot" aria-hidden="true"></span>
+              <span class="news-card__date">2023</span>
+              <span class="news-card__tag tag--article">Article</span>
+            </div>
+            <h2 class="news-card__title">PRISMM Offers a Solution for a Modern-Day Dilemma</h2>
+            <p class="news-card__body">The original feature that put Prismm on the map in Alabama — covering the origin story, the $84T wealth transfer opportunity, and why Martha chose Birmingham as home base for a fintech solving a universal problem.</p>
+            <span class="news-card__link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+        </div><!-- /news-grid -->
+      </div>
+    </section>
+
+    <!-- Press inquiry CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Press inquiries</h2>
+        <p>For media inquiries, interview requests, or press materials, reach out directly.</p>
+        <a href="mailto:martha@getprismm.com" class="btn btn--coral">Contact for press</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container">
+    <div class="footer__grid">
+      <div><div class="footer__logo"><img src="images/logo-dark.svg" alt="Prismm" width="180" height="67" loading="lazy"></div><p class="footer__tagline">Estate orchestration infrastructure for banks and credit unions. The platform purpose-built to manage the lifecycle of accounts through life events.</p></div>
+      <div><h4>Platform</h4><nav aria-label="Platform links"><ul class="footer__links"><li><a href="platform.html">Prismm Anchor</a></li><li><a href="platform.html#suite">Product suite</a></li><li><a href="platform.html#integration">Integration</a></li></ul></nav></div>
+      <div><h4>Company</h4><nav aria-label="Company links"><ul class="footer__links"><li><a href="about.html">About</a></li><li><a href="partners.html">Partners</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
+      <div><h4>Solutions</h4><nav aria-label="Solutions links"><ul class="footer__links"><li><a href="why-prismm.html#retention">Deposit retention</a></li><li><a href="why-prismm.html#transition">Account transition</a></li><li><a href="why-prismm.html#growth">Intergenerational growth</a></li><li><a href="why-prismm.html">Why Prismm</a></li></ul></nav></div>
+    </div>
+    <div class="footer__bottom"><span>&copy; 2026 Prismm Inc. All rights reserved.</span><span><a href="https://app.getprismm.com/session/new">Client login</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></span></div>
+  </div></footer>
+
+  <script src="js/main.js?v=6"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.news-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Show/hide cards
+        cards.forEach(card => {
+          const type = card.dataset.type;
+          if (filter === 'all' || type === filter) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        // Featured card spans 2 cols only if visible and not filtered
+        const featured = document.querySelector('.news-card--featured');
+        if (featured && !featured.hasAttribute('hidden')) {
+          featured.style.gridColumn = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
